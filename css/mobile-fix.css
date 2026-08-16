@@ -1,0 +1,941 @@
+/* ============================================================
+   MOBILE-FIX.CSS - РАЗШИРЕНА ВЕРСИЯ
+   ОБХВАЩА ТАБЛЕТИ ДО 1200px
+   ============================================================ */
+
+/* ----------------------------------------------
+   0. МАКСИМАЛНА КОРЕКЦИЯ ЗА ВСИЧКИ МОБИЛНИ И ТАБЛЕТИ
+   ---------------------------------------------- */
+@media (max-width: 1200px) {
+  /* ПРИНУДИТЕЛНО - ВСИЧКО В ЕКРАНА */
+  * {
+    max-width: 100vw !important;
+    box-sizing: border-box !important;
+  }
+
+  body, html {
+    overflow-x: hidden !important;
+    width: 100% !important;
+    max-width: 100vw !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    position: relative !important;
+  }
+
+  /* ВСИЧКИ КОНТЕЙНЕРИ */
+  .container,
+  .wrapper,
+  section,
+  #cska-news,
+  #player-wrapper,
+  #next-match-section,
+  #news-container,
+  #past-matches,
+  .player-layout,
+  #next-match,
+  #player-wrapper,
+  #cska-news,
+  #match-background,
+  #logos-wrapper,
+  #popup-window,
+  #popup-content,
+  #popup-menu-container,
+  .auth-card,
+  #footer {
+    width: 100% !important;
+    max-width: 100vw !important;
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+  }
+
+  header {
+    padding-top: 75px !important;
+  }
+}
+
+/* ----------------------------------------------
+   ФОН И РЕЗУЛТАТ
+   ---------------------------------------------- */
+@media (max-width: 1200px) {
+  #logos-wrapper {
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 2vh !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .team-logo {
+    width: 60vw !important;
+    max-width: 260px !important;
+    height: auto !important;
+  }
+
+  #match-result {
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    font-size: 28vw !important;
+    line-height: 1 !important;
+    white-space: nowrap !important;
+    z-index: 100 !important;
+    -webkit-text-stroke: 0.2vw #ff0000 !important;
+    text-shadow: -0.2vw -0.2vw 0 #fff, 0.2vw -0.2vw 0 #fff, -0.2vw 0.2vw 0 #fff,
+      0.2vw 0.2vw 0 #fff !important;
+    letter-spacing: -0.5vw !important;
+    max-width: 90vw !important;
+    overflow: hidden !important;
+  }
+}
+
+/* ----------------------------------------------
+   ПЛЕЪР
+   ---------------------------------------------- */
+@media (max-width: 1200px) {
+  #music-player {
+    height: 60px !important;
+    padding: 0 10px !important;
+    gap: 6px !important;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    max-width: 100vw !important;
+    z-index: 99999 !important;
+    background: rgba(0, 0, 0, 0.95) !important;
+    display: flex !important;
+    align-items: center !important;
+  }
+
+  #music-player button {
+    padding: 8px 12px !important;
+    font-size: 14px !important;
+    min-height: 36px !important;
+    min-width: 36px !important;
+  }
+
+  #track-title {
+    font-size: 12px !important;
+    max-width: 35vw !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    flex: 1 !important;
+  }
+}
+
+/* ----------------------------------------------
+   ЦЕНТРАЛНО ЛОГО
+   ---------------------------------------------- */
+@media (max-width: 1200px) {
+  #center-logo {
+    position: fixed !important;
+    top: 25px !important;
+    bottom: auto !important;
+    left: 50% !important;
+    right: auto !important;
+    transform: translateX(-50%) !important;
+    z-index: 9998 !important;
+  }
+
+  #center-logo img {
+    height: 38px !important;
+    max-width: 90px !important;
+  }
+}
+
+/* ----------------------------------------------
+   МЕНЮ
+   ---------------------------------------------- */
+@media (max-width: 1200px) {
+  #menu-toggle {
+    display: block !important;
+    margin-left: auto !important;
+    font-size: 24px !important;
+    padding: 6px 14px !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+    border: none !important;
+    border-radius: 8px !important;
+    color: white !important;
+    cursor: pointer !important;
+    min-height: 40px !important;
+    min-width: 40px !important;
+    z-index: 99999 !important;
+  }
+
+  #popup-menu-container {
+    position: fixed !important;
+    bottom: 0 !important;
+    top: auto !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    max-width: 100vw !important;
+    background: rgba(0, 0, 0, 0.98) !important;
+    padding: 14px 18px !important;
+    padding-bottom: calc(14px + env(safe-area-inset-bottom)) !important;
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    border-top: 2px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 16px 16px 0 0 !important;
+    transform: translateY(100%) !important;
+    transition: transform 0.3s ease !important;
+    z-index: 99999 !important;
+    box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.8) !important;
+  }
+
+  #popup-menu-container.show {
+    transform: translateY(0%) !important;
+  }
+
+  #popup-menu-container a {
+    flex: 1 !important;
+    min-width: 55px !important;
+    text-align: center !important;
+    font-size: 13px !important;
+    padding: 10px 8px !important;
+    background: rgba(255, 255, 255, 0.06) !important;
+    border-radius: 8px !important;
+    color: white !important;
+    text-decoration: none !important;
+    min-height: 40px !important;
+  }
+
+  #popup-window {
+    width: 94% !important;
+    max-width: 94vw !important;
+    height: 82% !important;
+    max-height: 82% !important;
+    margin-top: 65px !important;
+    padding: 12px !important;
+    border-radius: 12px !important;
+    background: #111 !important;
+    overflow-y: auto !important;
+  }
+
+  #popup-close {
+    font-size: 30px !important;
+    padding: 2px 10px !important;
+    float: right !important;
+    color: white !important;
+    background: transparent !important;
+    border: none !important;
+  }
+
+  #popup-content {
+    padding: 8px 4px !important;
+    clear: both !important;
+  }
+
+  #popup-window .player-row {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 8px !important;
+  }
+
+  #popup-window .player-row img {
+    width: 90px !important;
+    height: 90px !important;
+  }
+
+  #popup-window .match-row img {
+    width: 45px !important;
+    height: 45px !important;
+  }
+}
+
+/* ----------------------------------------------
+   ИГРАЧИ
+   ---------------------------------------------- */
+@media (max-width: 1200px) {
+  #player-wrapper {
+    padding: 0 10px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .player-card {
+    flex-direction: column !important;
+    height: auto !important;
+    min-height: 280px !important;
+    border-radius: 14px !important;
+    margin-bottom: 12px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    display: flex !important;
+    position: relative !important;
+    overflow: hidden !important;
+  }
+
+  .player-info {
+    padding: 14px 12px !important;
+    order: 2 !important;
+    width: 100% !important;
+    flex: none !important;
+    text-align: center !important;
+    position: relative !important;
+    z-index: 2 !important;
+  }
+
+  .player-photo {
+    flex: none !important;
+    width: 100% !important;
+    height: 180px !important;
+    border-left: none !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+    order: 1 !important;
+    position: relative !important;
+  }
+
+  .player-number {
+    font-size: 16rem !important;
+    transform: translate(-50%, -50%) !important;
+    left: 50% !important;
+    top: 50% !important;
+    opacity: 0.1 !important;
+    position: absolute !important;
+    z-index: 1 !important;
+    max-width: 100% !important;
+    overflow: hidden !important;
+  }
+
+  .player-name {
+    font-size: 2rem !important;
+    color: rgba(255, 255, 255, 0.9) !important;
+    position: relative !important;
+    z-index: 2 !important;
+    max-width: 100% !important;
+    word-wrap: break-word !important;
+  }
+
+  .player-meta {
+    font-size: 0.9rem !important;
+    margin-top: 4px !important;
+    position: relative !important;
+    z-index: 2 !important;
+  }
+
+  .player-arrow {
+    font-size: 36px !important;
+    padding: 8px 12px !important;
+    background: rgba(0, 0, 0, 0.6) !important;
+    border-radius: 10px !important;
+    z-index: 10 !important;
+    min-height: 40px !important;
+    min-width: 40px !important;
+  }
+
+  .player-arrow.left {
+    left: 6px !important;
+  }
+
+  .player-arrow.right {
+    right: 6px !important;
+  }
+}
+
+/* ----------------------------------------------
+   СЛЕДВАЩИ МАЧОВЕ
+   ---------------------------------------------- */
+@media (max-width: 1200px) {
+  #next-match {
+    flex-direction: column !important;
+    gap: 16px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 10px !important;
+    box-sizing: border-box !important;
+    display: flex !important;
+  }
+
+  #next-match li {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    min-height: 280px !important;
+    padding: 16px !important;
+    margin: 0 !important;
+    border-radius: 14px !important;
+    justify-content: center !important;
+    gap: 4px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    box-sizing: border-box !important;
+    position: relative !important;
+    overflow: hidden !important;
+  }
+
+  #vs-label,
+  #match-timer,
+  .match-time-big,
+  .match-date-small {
+    position: static !important;
+    transform: none !important;
+    text-align: center !important;
+    width: 100% !important;
+    margin: 2px 0 !important;
+  }
+
+  #vs-label {
+    font-size: 32px !important;
+    color: rgba(255, 255, 255, 0.08) !important;
+    order: 0 !important;
+  }
+
+  #match-timer {
+    order: 1 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    width: 100% !important;
+  }
+
+  .match-countdown-label {
+    font-size: 15px !important;
+  }
+
+  .match-countdown-time {
+    justify-content: center !important;
+    flex-wrap: wrap !important;
+    gap: 8px !important;
+    display: flex !important;
+  }
+
+  .time-block .num {
+    font-size: 28px !important;
+  }
+
+  .time-block .label {
+    font-size: 9px !important;
+  }
+
+  .match-time-big {
+    font-size: 34px !important;
+    order: 2 !important;
+  }
+
+  .match-date-small {
+    font-size: 14px !important;
+    order: 3 !important;
+    margin-top: 6px !important;
+  }
+
+  #next-match img {
+    width: 35% !important;
+    max-width: 90px !important;
+    height: auto !important;
+  }
+
+  #match-date {
+    font-size: 22px !important;
+  }
+
+  .match-arrow {
+    font-size: 36px !important;
+    padding: 8px 12px !important;
+    background: rgba(0, 0, 0, 0.6) !important;
+    border-radius: 10px !important;
+    z-index: 10 !important;
+    min-height: 40px !important;
+    min-width: 40px !important;
+  }
+
+  .left-arrow {
+    left: 4px !important;
+  }
+
+  .right-arrow {
+    right: 4px !important;
+  }
+}
+
+/* ----------------------------------------------
+   НОВИНИ
+   ---------------------------------------------- */
+@media (max-width: 1200px) {
+  #cska-news {
+    padding: 0 10px !important;
+    box-sizing: border-box !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  #news-container {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 14px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    display: flex !important;
+    padding: 0 !important;
+  }
+
+  .news-cube {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    min-height: 180px !important;
+    padding: 14px !important;
+    flex: none !important;
+    box-sizing: border-box !important;
+    display: flex !important;
+    flex-direction: column !important;
+    overflow: hidden !important;
+  }
+
+  .news-title {
+    font-size: 16px !important;
+    margin-bottom: 8px !important;
+  }
+
+  .news-image {
+    height: 130px !important;
+    width: 100% !important;
+    object-fit: cover !important;
+  }
+
+  .news-text {
+    font-size: 14px !important;
+    line-height: 1.4 !important;
+  }
+
+  .news-cube.expanded .news-content {
+    max-height: 380px !important;
+  }
+
+  .news-link {
+    font-size: 13px !important;
+    margin-top: 6px !important;
+  }
+}
+
+/* ----------------------------------------------
+   ВИДЕО АРХИВ
+   ---------------------------------------------- */
+@media (max-width: 1200px) {
+  #past-matches {
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+    margin: 12px auto !important;
+    padding: 0 10px !important;
+    box-sizing: border-box !important;
+    display: grid !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .match-cube {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 12px !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+  }
+
+  .logos img {
+    width: 45px !important;
+    height: 45px !important;
+  }
+
+  .vs-label-arhive {
+    font-size: 17px !important;
+  }
+
+  .match-result {
+    font-size: 17px !important;
+  }
+
+  iframe {
+    height: 170px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}
+
+/* Таблети - 2 колони (от 768px до 1200px) */
+@media (min-width: 768px) and (max-width: 1200px) {
+  #past-matches {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+/* ----------------------------------------------
+   АРХИВ
+   ---------------------------------------------- */
+@media (max-width: 1200px) {
+  .player-layout {
+    flex-direction: column !important;
+    gap: 16px !important;
+    padding: 0 10px !important;
+    box-sizing: border-box !important;
+    display: flex !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .matches-card {
+    flex: none !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    min-height: 240px !important;
+    padding: 16px !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+  }
+
+  .match-teams img {
+    width: 11vh !important;
+    height: 11vh !important;
+    max-width: 65px !important;
+    max-height: 65px !important;
+  }
+
+  .match-timer-table {
+    width: 100% !important;
+    max-width: 280px !important;
+  }
+
+  .match-timer-table h2 {
+    font-size: 1.4rem !important;
+  }
+}
+
+/* ----------------------------------------------
+   ФУТЪР
+   ---------------------------------------------- */
+@media (max-width: 1200px) {
+  #footer {
+    width: 96% !important;
+    max-width: 96vw !important;
+    padding: 14px 16px !important;
+    margin: 16px auto 8px auto !important;
+    border-radius: 12px !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+  }
+
+  .footer-grid {
+    flex-direction: column !important;
+    gap: 10px !important;
+    align-items: center !important;
+    display: flex !important;
+    width: 100% !important;
+  }
+
+  .footer-section {
+    width: 100% !important;
+    text-align: center !important;
+  }
+
+  #footer b {
+    font-size: 0.6rem !important;
+  }
+
+  #footer a {
+    font-size: 0.75rem !important;
+  }
+
+  #footer .copyright {
+    font-size: 0.5rem !important;
+    margin-top: 6px !important;
+    opacity: 0.6 !important;
+  }
+}
+
+/* ----------------------------------------------
+   ТАБЛЕТИ В ХОРИЗОНТАЛЕН РЕЖИМ (landscape)
+   ---------------------------------------------- */
+@media (min-width: 768px) and (max-width: 1200px) and (orientation: landscape) {
+  
+  /* ФОН */
+  .team-logo {
+    width: 35vw !important;
+    max-width: 200px !important;
+  }
+
+  #match-result {
+    font-size: 22vw !important;
+    -webkit-text-stroke: 0.15vw #ff0000 !important;
+  }
+
+  /* ПЛЕЪР */
+  #music-player {
+    height: 55px !important;
+    padding: 0 12px !important;
+  }
+
+  /* ИГРАЧИ - 2 колони */
+  #player-wrapper {
+    padding: 0 12px !important;
+  }
+
+  .player-card {
+    flex-direction: row !important;
+    min-height: 200px !important;
+    width: 48% !important;
+    display: inline-flex !important;
+    margin: 0 1% 12px 1% !important;
+    float: left !important;
+  }
+
+  .player-photo {
+    flex: 0 0 35% !important;
+    height: 100% !important;
+    border-bottom: none !important;
+    border-right: 1px solid rgba(255, 255, 255, 0.08) !important;
+  }
+
+  .player-number {
+    font-size: 10rem !important;
+  }
+
+  .player-name {
+    font-size: 1.5rem !important;
+  }
+
+  .player-meta {
+    font-size: 0.75rem !important;
+  }
+
+  /* МАЧОВЕ - 2 колони */
+  #next-match {
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    gap: 12px !important;
+    padding: 0 12px !important;
+  }
+
+  #next-match li {
+    width: calc(50% - 6px) !important;
+    min-height: 180px !important;
+    padding: 12px !important;
+  }
+
+  #vs-label {
+    font-size: 24px !important;
+  }
+
+  .match-countdown-label {
+    font-size: 13px !important;
+  }
+
+  .time-block .num {
+    font-size: 22px !important;
+  }
+
+  .match-time-big {
+    font-size: 28px !important;
+  }
+
+  .match-date-small {
+    font-size: 12px !important;
+  }
+
+  #next-match img {
+    max-width: 60px !important;
+  }
+
+  /* ВИДЕО АРХИВ - 3 или 2 колони */
+  #past-matches {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 12px !important;
+    padding: 0 12px !important;
+  }
+
+  .logos img {
+    width: 40px !important;
+    height: 40px !important;
+  }
+
+  iframe {
+    height: 140px !important;
+  }
+
+  /* АРХИВ - 2 или 3 колони */
+  .player-layout {
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    padding: 0 12px !important;
+    gap: 12px !important;
+  }
+
+  .matches-card {
+    width: calc(33.33% - 8px) !important;
+    min-height: 200px !important;
+    padding: 12px !important;
+  }
+
+  .match-teams img {
+    width: 8vh !important;
+    height: 8vh !important;
+    max-width: 50px !important;
+    max-height: 50px !important;
+  }
+
+  .match-timer-table {
+    max-width: 220px !important;
+  }
+
+  .match-timer-table h2 {
+    font-size: 1.2rem !important;
+  }
+
+  /* НОВИНИ - 2 колони */
+  #news-container {
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    gap: 12px !important;
+  }
+
+  .news-cube {
+    width: calc(50% - 6px) !important;
+    min-height: 160px !important;
+  }
+
+  .news-image {
+    height: 110px !important;
+  }
+
+  /* ФУТЪР */
+  .footer-grid {
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+  }
+
+  .footer-section {
+    width: auto !important;
+    padding: 0 16px !important;
+  }
+}
+
+/* iPad Air специфични корекции (1180px) */
+@media (min-width: 1100px) and (max-width: 1200px) and (orientation: landscape) {
+  .player-card {
+    width: 32% !important;
+    min-height: 180px !important;
+  }
+
+  #next-match li {
+    width: calc(33.33% - 8px) !important;
+    min-height: 160px !important;
+  }
+
+  #past-matches {
+    grid-template-columns: repeat(4, 1fr) !important;
+  }
+
+  .matches-card {
+    width: calc(25% - 9px) !important;
+    min-height: 180px !important;
+  }
+
+  .news-cube {
+    width: calc(33.33% - 8px) !important;
+  }
+}
+
+/* ----------------------------------------------
+   ОБЩИ КОРЕКЦИИ - ПРЕДОТВРАТЯВА ИЗЛИЗАНЕ
+   ---------------------------------------------- */
+@media (max-width: 1200px) {
+  /* ВСИЧКИ ИЗОБРАЖЕНИЯ ДА СЕ ПОБИРАТ */
+  img {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+
+  /* ВСИЧКИ КАРТИ ДА СЕ ПОБИРАТ */
+  .player-card,
+  .matches-card,
+  .news-cube,
+  .match-cube,
+  #next-match li {
+    overflow: hidden !important;
+  }
+
+  /* ЗАБРАНЯВА СКРОЛ НАЛЯВО/НАДЯСНО */
+  .player-card,
+  .matches-card,
+  .news-cube,
+  .match-cube {
+    -webkit-tap-highlight-color: transparent !important;
+    touch-action: manipulation !important;
+  }
+
+  html {
+    scroll-behavior: smooth !important;
+  }
+}
+
+/* ============================================================
+   FIX: МЕНЮТО ДА СЕ ПОКАЗВА САМО ПРИ КЛИК
+   ============================================================ */
+
+@media (max-width: 1200px) {
+  
+  /* МЕНЮТО - СКРИТО ПО ПОДРАЗБИРАНЕ */
+  #popup-menu-container {
+    display: none !important;           /* Скрито */
+    position: fixed !important;
+    top: 55px !important;
+    bottom: auto !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    max-width: 100vw !important;
+    background: rgba(0, 0, 0, 0.98) !important;
+    padding: 14px 18px !important;
+    padding-bottom: calc(14px + env(safe-area-inset-bottom)) !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    border-top: none !important;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 0 0 16px 16px !important;
+    transform: translateY(-120%) !important;
+    transition: transform 0.3s ease, display 0.3s ease !important;
+    z-index: 9 !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8) !important;
+  }
+
+  /* КОГАТО Е АКТИВНО - ПОКАЗВА СЕ */
+  #popup-menu-container.show {
+    display: flex !important;           /* Показва се */
+    transform: translateY(0%) !important;
+  }
+
+  /* Overlay-ът също да е скрит по подразбиране */
+  #popup-overlay {
+    display: none !important;
+    position: fixed !important;
+    top: 75px !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: calc(100vh - 75px) !important;
+    background: rgba(0, 0, 0, 0.85) !important;
+    z-index: 99998 !important;
+    align-items: flex-start !important;
+    justify-content: center !important;
+  }
+
+  #popup-overlay.show {
+    display: flex !important;
+  }
+}
+/* ============================================================
+   КРАЙ
+   ============================================================ */

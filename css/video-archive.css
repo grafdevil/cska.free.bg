@@ -1,0 +1,359 @@
+/* ============================================================
+   СЕКЦИЯ: ВИДЕО-АРХИВ (PAST MATCHES) // video-archive.css
+   ============================================================ */
+
+/* Основният мрежови контейнер за всички минали мачове */
+#past-matches {
+    display: grid;                  /* Активира Grid Layout за подредба в решетка */
+    grid-template-columns: repeat(3, 1fr); /* Създава точно 3 колони с еднаква ширина (1 фракция всяка) */
+    gap: var(--box-gap);            /* Задава разстояние между кубовете чрез системна променлива */
+    justify-items: center;          /* Центрира всеки куб хоризонтално вътре в неговата клетка */
+    align-items: start;             /* Подравнява кубовете в началото (отгоре) на реда */
+    margin: 5px auto;              /* 30px разстояние отгоре/отдолу и автоматично центриране на целия блок */
+}
+
+/* Стил за индивидуалната кутия (куб) на всеки мач */
+.match-cube {
+    width: 100%;                    /* Кубът заема цялата ширина на своята Grid клетка */
+    background: var(--card-bg);      /* Задава фонов цвят от променлива */
+    border: 2px solid rgba(255,255,255,0.3); /* Тънка полупрозрачна рамка за стъклен ефект */
+    border-radius: 10px;            /* Заобля ъглите с 10px */
+    backdrop-filter: blur(6px);     /* Замъглява съдържанието зад куба */
+    -webkit-backdrop-filter: blur(6px); /* Поддръжка на замъгляването за Safari */
+    box-shadow: var(--box-shadow);  /* Добавя сянка от системна променлива */
+    display: flex;                  /* Позволява гъвкава подредба на елементите вътре */
+    flex-direction: column;         /* Подрежда логата, текста и видеото вертикално */
+    align-items: center;            /* Центрира всичко хоризонтално вътре в куба */
+    cursor: pointer;                /* Променя мишката на ръчичка (указва, че може да се кликне) */
+    font-weight: bold;              /* Удебелява всички текстове в куба */
+    font-size: 12px;                /* Базов размер на шрифта от 12px */
+    text-align: center;             /* Центрира текста */
+    transition: all 0.3s ease;      /* Всички промени (цвят, сянка) стават плавно за 0.3 сек */
+    overflow: hidden;               /* Гарантира, че видеото или съдържанието не "излизат" от куба */
+    padding: 5px;                   /* 5px вътрешно разстояние от всички страни */
+}
+
+/* Ефекти при посочване на куба с мишка (Hover) */
+.match-cube:hover {
+    backdrop-filter: blur(2px);     /* Намалява замъгляването при hover за по-голяма яснота */
+    -webkit-backdrop-filter: blur(2px);
+    background: var(--card-bg-hover); /* Сменя цвета на фона с hover версията му */
+    box-shadow: var(--box-shadow-hover); /* Засилва сянката за ефект на изпъкване */
+}
+
+/* Анимация за емоджи иконата при Hover върху куба */
+.match-cube:hover .emoji {
+    transform: scale(2.5);          /* Увеличава емоджито 2.5 пъти при посочване */
+}
+
+/* Контейнер за двете лога и надписа VS */
+.logos {
+    display: flex;                  /* Подрежда логата в хоризонтален ред */
+    align-items: center;            /* Подравнява ги перфектно по хоризонталната среда */
+    gap: 25px;                      /* Оставя 25px разстояние между двете лога */
+    margin: 5px 0;                  /* 5px отстояние отгоре и отдолу */
+}
+
+/* Стил за картинките на логата */
+.logos img {
+    width: 60px;                    /* Фиксирана ширина на логото */
+    height: 60px;                   /* Фиксирана височина на логото */
+    object-fit: contain;            /* Предпазва картинката от разтягане или деформиране */
+}
+
+/* Стил за малката икона (емоджи) */
+.emoji {
+    width: 20px !important;         /* Задава твърда ширина от 20px */
+    height: 20px !important;        /* Задава твърда височина от 20px */
+    vertical-align: middle;         /* Подравнява го в средата спрямо текста до него */
+    margin-right: 5px;              /* 5px разстояние отдясно */
+    transition: transform 0.5s ease; /* Прави уголемяването на емоджито много плавно */
+}
+
+/* Стил за надписа "VS" в архива */
+.vs-label-arhive {
+    font-size: 22px;                /* Размер на шрифта 22px */
+    margin: 0 5px;                  /* 5px странично разстояние */
+}
+
+/* Скритата секция, която съдържа видеото и детайлите */
+.match-extra {
+    max-height: 0;                  /* Първоначално е с височина 0 (напълно скрита) */
+    opacity: 0;                     /* Напълно прозрачна */
+    transition: max-height 0.4s ease, opacity 0.4s ease; /* Анимира плавно отварянето */
+    width: 100%;                    /* Заема цялата ширина на куба */
+}
+
+/* Клас, който се добавя чрез JavaScript при клик върху куба */
+.cube-expanded .match-extra {
+    max-height: 400px;              /* Разпъва секцията до 400px височина */
+    opacity: 1;                     /* Прави съдържанието видимо */
+    margin-top: 10px;               /* Добавя разстояние над видеото при отваряне */
+}
+
+/* Стил за цифровия резултат от мача */
+.match-result {
+    font-size: 22px;                /* Голям и ясен шрифт за резултата */
+    font-weight: bold;              /* Удебелен текст */
+}
+
+/* Стил за информацията за кръга/турнира */
+.match-round {
+    font-size: 18px;                /* Малко по-малък шрифт от резултата */
+}
+
+/* Настройки за вграденото видео (YouTube/Vimeo) */
+iframe {
+    width: 100%;                    /* Видеото заема целия куб по ширина */
+    height: 250px;                  /* Фиксирана височина на видео плейъра */
+    border: none;                   /* Премахва стандартната рамка на iframe */
+    margin-top: 5px;                /* Малко разстояние над видеото */
+}
+
+.compact-stats-container {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  margin-top: 6px;
+  padding: 6px 8px;
+  border-radius: 6px;
+}
+
+.compact-stat {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 14px;
+}
+
+.compact-label {
+  min-width: 20px;
+  text-align: center;
+  font-size: 0.8rem;
+}
+
+/* ПРИТЕЖАНИЕ - червено и бяло */
+.compact-bar {
+  display: flex;
+  flex: 1;
+  height: 24px;
+  border-radius: 4px;
+  overflow: hidden;
+  background: #e2e8f0;
+  max-width: 400px;
+}
+
+.possession-bar {
+  height: 26px;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+/* ЧЕРВЕНО (домакин) */
+.possession-home {
+  background: #dc2626;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 8px;
+  font-size: 0.7rem;
+  font-weight: bold;
+  transition: width 0.3s;
+  min-width: 60px;
+  white-space: nowrap;
+}
+
+/* БЯЛО (гост) */
+.possession-away {
+  background: #ffffff;
+  color: #dc2626;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 8px;
+  font-size: 0.7rem;
+  font-weight: bold;
+  transition: width 0.3s;
+  min-width: 60px;
+  white-space: nowrap;
+}
+
+.possession-score {
+  font-weight: bold;
+  font-size: 0.75rem;
+}
+
+.possession-percent {
+  opacity: 0.9;
+  font-size: 0.65rem;
+}
+
+/* УДАРИ - червено и бяло */
+.shots-row {
+  align-items: center;
+}
+
+.shots-container {
+  flex: 1;
+  display: flex;
+  gap: 6px;
+  max-width: 400px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.shot-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  min-width: 0;
+}
+
+.shot-bar {
+  height: 20px;
+  max-width: 100%;
+}
+
+/* ЧЕРВЕНО (домакин) */
+.shot-home {
+  background: #dc2626;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.6rem;
+  font-weight: bold;
+  transition: width 0.3s;
+  min-width: 30px;
+  padding: 0 6px;
+  white-space: nowrap;
+}
+
+/* БЯЛО (гост) */
+.shot-away {
+  color: #dc2626;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.6rem;
+  font-weight: bold;
+  transition: width 0.3s;
+  min-width: 16px;
+  padding: 0 4px;
+}
+
+.shot-label-inner {
+  font-size: 0.55rem;
+  opacity: 0.9;
+}
+
+.shot-label-inner2 {
+  font-size: 0.55rem;
+  opacity: 0.9;
+  color: #dc2626;
+}
+
+.shot-value {
+  font-weight: bold;
+  font-size: 0.65rem;
+}
+
+/* Само резултат (когато няма статистика) */
+.result-only {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 4px 0;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.result-only-home {
+  color: #ffffff;
+}
+
+.result-only-away {
+  color: #ffffff;
+}
+
+.result-only-divider {
+  color: #ffffff;
+}
+
+.result-only-penalties {
+  color: #dc2626;
+  font-size: 0.8rem;
+  background: #fee2e2;
+  padding: 0 6px;
+  border-radius: 3px;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .possession-bar {
+    height: 22px;
+    max-width: 300px;
+  }
+  
+  .possession-home, .possession-away {
+    font-size: 0.6rem;
+    padding: 0 4px;
+    min-width: 40px;
+  }
+  
+  .possession-score {
+    font-size: 0.65rem;
+  }
+  
+  .possession-percent {
+    font-size: 0.55rem;
+  }
+  
+  .shot-bar {
+    height: 18px;
+  }
+  
+  .shot-home {
+    font-size: 0.5rem;
+    min-width: 20px;
+    padding: 0 4px;
+  }
+  
+  .shot-away {
+    font-size: 0.5rem;
+    min-width: 12px;
+    padding: 0 2px;
+  }
+  
+  .shot-label-inner {
+    font-size: 0.45rem;
+  }
+  
+  .shot-label-inner2 {
+    font-size: 0.45rem;
+  }
+  
+  .shot-value {
+    font-size: 0.5rem;
+  }
+  
+  .shots-container {
+    gap: 4px;
+    max-width: 300px;
+  }
+  
+  .compact-bar {
+    max-width: 300px;
+  }
+  
+  .compact-stats-container {
+    padding: 4px 6px;
+  }
+}
+
+
+
+

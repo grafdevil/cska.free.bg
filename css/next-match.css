@@ -1,0 +1,249 @@
+/* ============================================================
+СЕКЦИЯ: МАЧОВЕ / NEXT MATCH
+============================================================ */
+/* next-match.css */
+
+
+#next-match {
+  display: flex;
+  gap: var(--box-gap);
+  justify-content: center;
+  align-items: stretch; /* Това кара всички елементи да заемат височината на най-големия */
+}
+
+#next-match li {
+  list-style: none;
+  /* Премахваме фиксираните височина и широчина, за да зависи размерът от съдържанието */
+  /* width: 60vh; */
+  /* height: 60vh; */
+  
+  /* Вместо това използваме минимални размери или гъвкав размер (flex) */
+  flex: 1 1 300px; /* Минимална ширина от 300px, като се разтягат при нужда */
+  min-height: 450px; /* Минимална височина, която ще расте спрямо най-големия */
+  padding: 20px;
+  
+  background: var(--card-bg);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 20px;
+  text-align: center;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  cursor: default;
+  box-shadow: var(--box-shadow);
+  transition: backdrop-filter .3s, background .3s, box-shadow .3s;
+	margin: 40px auto 10px auto;
+}
+
+#next-match li:hover {
+backdrop-filter: blur(2px);
+-webkit-backdrop-filter: blur(2px);
+background: var(--card-bg-hover);
+box-shadow: var(--box-shadow-hover);
+}
+
+#next-match li:hover .match-icon {
+transform: scale(1.8);
+}
+
+/* 1. Премахваме hover ефекта директно върху img, за да не се дублира */
+#next-match img {
+  width: 70%;
+  height: 70%;
+  object-fit: contain;
+  margin-bottom: 5px;
+  /* Преходът тук осигурява плавно движение и в двете посоки */
+  transition: transform 0.3s ease; 
+}
+
+/* 2. Когато посочим целия блок (li), увеличаваме снимката вътре в него */
+#next-match li:hover img {
+  transform: scale(1.02);
+}
+
+
+/* 3. Премахваме старото правило за .match-icon, за да не се получават двойни анимации */
+/* Можете да изтриете този блок:
+#next-match li:hover .match-icon {
+  transform: scale(1.8);
+}
+*/
+
+/* ============================================================
+ИНФО БЛОК
+============================================================ */
+
+#match-info {
+position: relative;
+width: min(60vh,420px);
+height: min(60vh,420px);
+background:#ff5722;
+color:#fff;
+border-radius:10px;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+font-weight:bold;
+text-align:center;
+line-height:1.2;
+font-size:14px;
+}
+
+/* VS в горния десен ъгъл 
+#vs-label {
+    position: absolute;
+    top: 5px;          /* Разстояние от горе 
+    right: auto;        /* Разстояние от дясно 
+    left: auto;         /* Премахваме старото центриране 
+    transform: none;    /* Премахваме старото центриране 
+    font-size: 50px;    /* Малко по-малък размер, за да се събере добре в ъгъла 
+    -webkit-text-stroke: 0.5px black; 
+    line-height: 1;
+}*/
+
+/* VS в горния десен ъгъл */
+#vs-label {
+  position: absolute;              /* Изважда номера от нормалния поток, за да го ползва като фон */
+  font-size: calc(1.30 * 250px);   /* Динамичен размер на шрифта (около 494px) */
+  font-weight: 900;                /* Най-голямата дебелина на шрифта */
+  color: rgba(255, 255, 255, 0.08); /* Много бледо бяло (прозрачност 12%) */
+  margin: 0;                       /* Премахва стандартните разстояния */
+  top: 50%;                        /* Позиционира центъра на номера спрямо горния ръб */
+  left: 50%;                       /* Позиционира центъра на номера спрямо левия ръб */
+  transform: translate(-50%, -50%); /* Прецизно изместване за идеален визуален център */
+  z-index: 1;                      /* Поставя го зад името и мета данните */
+  white-space: nowrap;             /* Забранява на номера да се пренася на нов ред */
+  -webkit-text-stroke: 0.3vw rgba(255, 255, 255, 0.12); /* Добавя тънък контур на буквите */
+  text-stroke: 1vw black;          /* Добавя черен контур (ЗАБЕЛЕЖКА: тук 1vw е доста голям контур) */
+}
+/*
+#next-match li:hover #vs-label {
+  transform: translate(-50%, -50%);
+  scale: 1.02;
+}
+*/
+/* ЧАС И ДАТА */
+.match-time-big {
+    position: absolute;
+    bottom: 35px;
+    left: 10px;
+    font-size: 58px; /* Малко по-компактно за сигурност */
+    font-weight: 800; /* По-плътен шрифт стои по-добре без контур */
+    line-height: 1;
+    color: #ffffff; /* Задължително светъл цвят върху тъмен фон */
+    text-shadow: 0 4px 12px rgba(0, 0, 0, 0.4); /* Мека сянка вместо груб контур */
+}
+
+.match-day-small {
+position:absolute;
+bottom:10px;
+left:10px;
+font-size:38px;
+font-weight: 200;
+line-height:1;
+}
+
+.match-date-small {
+position:absolute;
+bottom:13px;
+left:auto;
+font-size:18px;
+font-weight: 200;
+line-height:1;
+}
+
+#match-date {
+background:linear-gradient(90deg,white,red);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+-webkit-text-stroke:.5px white;
+margin-top:5px;
+font-size:32px;
+font-weight:bold;
+}
+
+/* ============================================================
+ТАЙМЕР
+============================================================ */
+
+/#match-timer {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Перфектно центриране */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Центрираме елементите вътре в таймера */
+}
+
+.match-countdown-label {
+font-size:25px;
+}
+
+.match-countdown-time {
+    display: flex;
+    gap: 15px;
+    justify-content: center; /* Променено от flex-end на center */
+}
+
+.time-block {
+display:flex;
+flex-direction:column;
+align-items:center;
+}
+
+.time-block .num {
+font-size:90px;
+font-weight:bold;
+line-height:1;
+    -webkit-text-stroke: 0.3px black;
+/*	transition:transform .5s ease; */
+}
+/*
+#next-match li:hover .time-block .num {
+transform: scale(1.5);
+}
+*/
+.time-block .label {
+font-size:13px;
+text-transform:uppercase;
+opacity:.8;
+}
+
+.match-countdown-seconds .num {
+    font-size: 35px !important;
+    transform: scaleY(1.2) !important;
+    margin-bottom: 0 !important; /* Махаме долния марджин */
+    margin-top: auto; /* Бута цифрата надолу */
+}
+
+.match-countdown-seconds .label {
+    font-size: 11px !important;
+    margin-top: 5px; /* Малко разстояние от цифрата */
+}
+
+/* ============================================================
+ИКОНКИ
+============================================================ */
+
+.match-icon {
+position:absolute;
+top:3px;
+left:3px;
+font-size:20px;
+transition:transform .5s ease;
+}
+
+.emoji-mach {
+width:50px !important;
+height:50px !important;
+vertical-align:middle;
+margin-right:5px;
+}

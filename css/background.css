@@ -1,0 +1,101 @@
+/* ============================================================
+   BACKGROUND & LOGOS (ФОН И ЛОГА)
+   ============================================================ */
+
+/* Стил за основния фон на секцията с мача */
+#match-background {
+    position: fixed;                  /* Фиксира фона, така че да не се движи при скролване */
+    inset: 0;                         /* Разпъва елемента до всички краища на екрана (горе, долу, ляво, дясно) */
+    background: rgba(0,0,0,0.99);     /* Почти напълно черен цвят (99% непрозрачност) */
+    display: flex;                    /* Използва Flexbox за лесно центриране на логата */
+    align-items: center;              /* Центрира логата вертикално в средата на екрана */
+    justify-content: center;          /* Центрира логата хоризонтално в средата на екрана */
+    z-index: 0;                      /* Поставя този фон зад цялото останало съдържание на сайта */
+}
+
+/* Контейнерът, който държи двете емблеми на отборите */
+#logos-wrapper {
+    position: relative;               /* Позволява на резултата (#match-result) да се позиционира точно върху него */
+    display: flex;                    /* Подрежда двете лога едно до друго */
+    align-items: center;              /* Изравнява логата по хоризонталната им среда */
+    justify-content: center;          /* Центрира групата от лога в средата */
+  /*   gap: 1vw;                         Разстояние между логата, равно на 1% от ширината на екрана */
+}
+
+/* Стил за самите емблеми на отборите */
+.team-logo {
+    width: 40vw;                      /* Логото заема цели 58% от ширината на целия екран (много мащабно) */
+    opacity: 1;                       /* Пълна видимост на изображението */
+    object-fit: contain;              /* Предпазва логото от деформиране, запазвайки пропорциите му */
+    transition: transform 0.8s ease, opacity 0.8s ease; /* Плавна анимация за уголемяване или поява */
+}
+
+/* Базово състояние за плавни преходи */
+.team-logo, #match-result {
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Когато искаме да скрием логата (добави клас .hidden) */
+.team-logo.hidden {
+    opacity: 0;
+    transform: scale(0.8);
+}
+
+#match-result {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    font-size: 45vw;
+    font-weight: 900;
+    font-family: 'Impact', sans-serif;
+    white-space: nowrap;
+    
+    color: rgba(255, 255, 255, 0.99);
+    
+    text-shadow: 
+        -0.4vw -0.4vw 0 #fff,  
+         0.4vw -0.4vw 0 #fff,
+        -0.4vw  0.4vw 0 #fff,
+         0.4vw  0.4vw 0 #fff;
+    
+    -webkit-text-stroke: 0.5vw #ff0000;
+    
+    letter-spacing: -0.5vw;
+    z-index: 9999;
+    pointer-events: none;
+    transition: opacity 0.5s ease;
+}
+
+/* Контейнер за всеки резултат (например "0" със дусипи) */
+.score-wrapper {
+    position: relative;
+    display: inline-block;
+    line-height: 1;
+}
+
+/* Стил за дусипите - видимо по-големи */
+.penalty-score {
+    position: absolute;
+    bottom: -0.0em;
+    right: -0.0em;
+    font-size: 0.35em;  /* Увеличено от 0.25em */
+    font-weight: 900;
+    white-space: nowrap;
+    color: rgba(255, 255, 255, 0.99);
+    text-shadow: 
+        -0.1vw -0.1vw 0 #fff,  
+         0.1vw -0.1vw 0 #fff,
+        -0.1vw  0.1vw 0 #fff,
+         0.1vw  0.1vw 0 #fff;
+    -webkit-text-stroke: 0.15vw #ff0000;
+}
+
+#match-result.hidden {
+    opacity: 0;
+}
+
+#match-result.visible {
+    opacity: 1;
+}

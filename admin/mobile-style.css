@@ -1,0 +1,910 @@
+/* mobile-style.css */
+/* Зарежда се само за екрани по-малки от 992px */
+
+@media (max-width: 992px) {
+    /* 1. ГЛОБАЛНА СТРУКТУРА */
+    .admin-container {
+        display: flex !important;
+        flex-direction: column !important;
+        min-height: auto !important;
+    }
+
+    /* 2. СТРАНИЧНО МЕНЮ */
+    .sidebar {
+        position: relative !important;
+        width: 100% !important;
+        height: auto !important;
+        min-height: auto !important;
+        padding: 5px 0 !important;
+        display: block !important;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.2) !important;
+    }
+
+    .sidebar-header {
+        padding: 10px !important;
+        font-size: 1.1rem !important;
+    }
+    
+    .sidebar-header h2 {
+        font-size: 1.2rem !important;
+        margin: 0 !important;
+    }
+
+    .nav-links {
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        padding: 5px !important;
+        gap: 5px !important;
+    }
+
+    .nav-links li {
+        flex: 1 1 30% !important;
+        padding: 10px 5px !important;
+        margin: 0 !important;
+        font-size: 12px !important;
+        text-align: center;
+        border-radius: 6px;
+    }
+    
+    .nav-links li a {
+        justify-content: center !important;
+        font-size: 12px !important;
+    }
+    
+    .nav-links li a i {
+        font-size: 14px !important;
+    }
+
+    /* 3. ОСНОВНО СЪДЪРЖАНИЕ */
+    .content {
+        margin-left: 0 !important;
+        padding: 15px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        overflow-x: hidden !important;
+    }
+
+    /* 4. ЗАГЛАВИЕ */
+    .content-header {
+        flex-direction: column !important;
+        gap: 10px !important;
+        padding: 15px !important;
+        margin-bottom: 15px !important;
+    }
+    
+    .content-header h1 {
+        font-size: 1.3rem !important;
+        margin: 0 !important;
+    }
+    
+    .content-header .user-info {
+        justify-content: flex-start !important;
+        width: 100% !important;
+    }
+
+    /* 5. СТАТИСТИКИ */
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 10px !important;
+        margin-bottom: 20px !important;
+    }
+    
+    .stat-card {
+        padding: 15px !important;
+        overflow: hidden !important;
+        word-wrap: break-word !important;
+    }
+    
+    .stat-card h3 {
+        font-size: 1.5rem !important;
+        margin: 5px 0 !important;
+    }
+    
+    .stat-card p {
+        font-size: 0.75rem !important;
+        margin: 0 !important;
+    }
+
+    /* 6. ТАБОВЕ */
+    .tabs-container {
+        display: flex !important;
+        gap: 5px !important;
+        margin-bottom: 15px !important;
+        padding-bottom: 10px !important;
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+        flex-wrap: nowrap !important;
+    }
+    
+    .tab-btn {
+        padding: 8px 15px !important;
+        font-size: 13px !important;
+        white-space: nowrap !important;
+        flex-shrink: 0 !important;
+    }
+
+    /* 7. ТАБЛИЦИ - КАРТОВ ИЗГЛЕД */
+    .data-table {
+        display: block !important;
+        width: 100% !important;
+        overflow: hidden !important;
+        word-wrap: break-word !important;
+    }
+
+    .data-table thead {
+        display: none !important;
+    }
+
+    .data-table tbody {
+        display: block !important;
+        width: 100% !important;
+    }
+
+    .data-table tr {
+        display: block !important;
+        margin-bottom: 15px !important;
+        border: 1px solid #e2e8f0 !important;
+        border-radius: 10px !important;
+        background: #fff !important;
+        padding: 12px !important;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.05) !important;
+        overflow: hidden !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    .data-table td {
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        padding: 8px 0 !important;
+        border-bottom: 1px solid #f1f5f9 !important;
+        font-size: 14px !important;
+        gap: 10px !important;
+        flex-wrap: wrap !important;
+        word-break: break-word !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    .data-table td:last-child {
+        border: none !important;
+        justify-content: center !important;
+        gap: 8px !important;
+        padding-top: 12px !important;
+        flex-wrap: wrap !important;
+    }
+
+    /* Етикети за колоните */
+    .data-table td:before {
+        content: attr(data-label) !important;
+        font-weight: 600 !important;
+        color: #64748b !important;
+        font-size: 12px !important;
+        text-transform: uppercase !important;
+        letter-spacing: 0.5px !important;
+        flex-shrink: 0 !important;
+        margin-right: 10px !important;
+    }
+
+    /* ===== СПЕЦИАЛНО ЗА СНИМКИ - ОТЛЯВО ===== */
+    .data-table td:has(.table-logo),
+    .data-table td:has(.player-photo-zoom) {
+        flex-direction: row !important;
+        justify-content: flex-start !important;
+        gap: 12px !important;
+    }
+    
+    .data-table td:has(.table-logo):before,
+    .data-table td:has(.player-photo-zoom):before {
+        display: none !important;
+    }
+    
+    .data-table td .table-logo,
+    .data-table td .player-photo-zoom {
+        width: 40px !important;
+        height: 40px !important;
+        flex-shrink: 0 !important;
+        margin-right: 0 !important;
+        order: -1 !important;
+    }
+
+    /* ===== СПЕЦИАЛНО ЗА КОЛОНАТА "ДВУБОЙ" В МАЧОВЕТЕ ===== */
+    .data-table td[data-label="Двубой"] {
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 8px !important;
+        padding: 10px 0 !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+    
+    .data-table td[data-label="Двубой"]:before {
+        align-self: flex-start !important;
+    }
+    
+    .data-table td[data-label="Двубой"] > div {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        align-items: center !important;
+        gap: 8px !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+    }
+    
+    /* Стилове за отборите в мача - мобилен изглед */
+    .data-table td[data-label="Двубой"] img {
+        width: 28px !important;
+        height: 28px !important;
+        flex-shrink: 0 !important;
+        object-fit: contain !important;
+    }
+    
+    .data-table td[data-label="Двубой"] span {
+        font-size: 13px !important;
+        max-width: 80px !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+        white-space: nowrap !important;
+    }
+    
+    .data-table td[data-label="Двубой"] .result-badge {
+        font-size: 14px !important;
+        padding: 2px 10px !important;
+        min-width: 35px !important;
+    }
+    
+    /* YouTube икона */
+    .data-table td[data-label="Двубой"] .fa-youtube {
+        font-size: 18px !important;
+    }
+    
+    /* Статистика под мача */
+    .data-table td[data-label="Двубой"] div:last-child {
+        font-size: 0.65rem !important;
+        gap: 8px !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+    }
+    
+    .data-table td[data-label="Двубой"] div:last-child span {
+        font-size: 0.65rem !important;
+        max-width: none !important;
+        white-space: nowrap !important;
+    }
+
+    /* ===== КОЛОНАТА "ДАТА/ТУРНИР" ===== */
+    .data-table td[data-label="Дата/Турнир"] {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 4px !important;
+    }
+    
+    .data-table td[data-label="Дата/Турнир"]:before {
+        align-self: flex-start !important;
+    }
+    
+    .data-table td[data-label="Дата/Турнир"] strong {
+        font-size: 13px !important;
+    }
+    
+    .data-table td[data-label="Дата/Турнир"] span {
+        font-size: 0.75rem !important;
+    }
+
+    /* ===== КОЛОНАТА "МЯСТО/БЕЛЕЖКИ" ===== */
+    .data-table td[data-label="Място/Бележки"] {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 4px !important;
+    }
+    
+    .data-table td[data-label="Място/Бележки"]:before {
+        align-self: flex-start !important;
+    }
+    
+    .data-table td[data-label="Място/Бележки"] small {
+        font-size: 12px !important;
+    }
+
+    /* 8. БУТОНИ ЗА ДЕЙСТВИЕ */
+    .btn-edit, .btn-del {
+        flex: 1 !important;
+        min-width: 60px !important;
+        text-align: center !important;
+        padding: 6px 12px !important;
+        font-size: 12px !important;
+    }
+    
+    .btn-edit {
+        margin-right: 0 !important;
+    }
+
+    /* 9. МОДАЛЕН ПРОЗОРЕЦ */
+    .modal-overlay {
+        padding: 10px !important;
+        align-items: flex-start !important;
+        padding-top: 30px !important;
+    }
+    
+    .modal-content {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        border-radius: 12px !important;
+        max-height: 90vh !important;
+        box-sizing: border-box !important;
+    }
+    
+    .modal-header {
+        padding: 15px !important;
+    }
+    
+    .modal-header h2 {
+        font-size: 1.1rem !important;
+        margin: 0 !important;
+    }
+    
+    .modal-body-scroll {
+        padding: 15px !important;
+    }
+    
+    .modal-footer {
+        padding: 12px 15px !important;
+        flex-wrap: wrap !important;
+    }
+    
+    .modal-footer button {
+        flex: 1 !important;
+        min-width: 80px !important;
+        font-size: 14px !important;
+    }
+
+    /* 10. ФОРМУЛЯРИ */
+    .form-grid {
+        grid-template-columns: 1fr !important;
+        gap: 10px !important;
+    }
+    
+    .form-group label {
+        font-size: 13px !important;
+    }
+    
+    .form-group input,
+    .form-group select {
+        padding: 10px !important;
+        font-size: 16px !important;
+        -webkit-appearance: none !important;
+        border-radius: 6px !important;
+        box-sizing: border-box !important;
+        width: 100% !important;
+    }
+
+    /* 11. ТЪРСЕНЕ */
+    .search-input {
+        font-size: 16px !important;
+        padding: 12px !important;
+        height: auto !important;
+        -webkit-appearance: none !important;
+        border-radius: 8px !important;
+        box-sizing: border-box !important;
+        width: 100% !important;
+    }
+
+    /* 12. ЧЕКБОКС */
+    .checkbox-card {
+        width: 100% !important;
+        justify-content: center !important;
+        padding: 12px !important;
+        font-size: 14px !important;
+        box-sizing: border-box !important;
+    }
+    
+    .checkbox-card input {
+        width: 20px !important;
+        height: 20px !important;
+        margin-right: 10px !important;
+    }
+
+    /* 13. АУДИО ПЛЕЪР */
+    #audio-player {
+        padding: 10px !important;
+        max-width: 280px !important;
+        right: 10px !important;
+        bottom: 10px !important;
+        box-sizing: border-box !important;
+    }
+    
+    #audio-player audio {
+        width: 100% !important;
+        height: 45px !important;
+    }
+
+    /* 14. РЕЗУЛТАТИ И БЕЙДЖОВЕ */
+    .result-badge {
+        min-width: 35px !important;
+        padding: 2px 6px !important;
+        font-size: 13px !important;
+    }
+    
+    .match-stats-text {
+        max-width: 120px !important;
+        font-size: 12px !important;
+    }
+    
+    .role-badge {
+        font-size: 10px !important;
+        padding: 2px 6px !important;
+    }
+
+    /* 15. ЗУУМ НА СНИМКИ */
+    .player-photo-zoom {
+        transform-origin: left center !important;
+    }
+    
+    .player-photo-zoom:hover {
+        transform: scale(2.5) !important;
+    }
+
+    /* 16. АВАТАР */
+    .avatar {
+        width: 32px !important;
+        height: 32px !important;
+        font-size: 14px !important;
+    }
+    
+    #current-user-role {
+        font-size: 12px !important;
+    }
+    
+    /* 17. ИНФО СЕКЦИЯТА - скрита за не-администратори */
+    .info-section {
+        display: none !important;
+    }
+}
+
+/* 18. МНОГО МАЛКИ ЕКРАНИ (под 480px) */
+@media (max-width: 480px) {
+    .stats-grid {
+        grid-template-columns: 1fr 1fr !important;
+        gap: 8px !important;
+    }
+    
+    .stat-card {
+        padding: 10px !important;
+    }
+    
+    .stat-card h3 {
+        font-size: 1.2rem !important;
+    }
+    
+    .nav-links li {
+        flex: 1 1 28% !important;
+        padding: 8px 3px !important;
+        font-size: 10px !important;
+    }
+    
+    .nav-links li a {
+        font-size: 10px !important;
+    }
+    
+    .nav-links li a i {
+        font-size: 12px !important;
+    }
+    
+    .content {
+        padding: 10px !important;
+    }
+    
+    .data-table tr {
+        padding: 10px !important;
+    }
+    
+    .data-table td {
+        font-size: 12px !important;
+        padding: 6px 0 !important;
+    }
+    
+    .data-table td:before {
+        font-size: 10px !important;
+    }
+    
+    .data-table td .table-logo,
+    .data-table td .player-photo-zoom {
+        width: 32px !important;
+        height: 32px !important;
+    }
+    
+    .data-table td[data-label="Двубой"] img {
+        width: 22px !important;
+        height: 22px !important;
+    }
+    
+    .data-table td[data-label="Двубой"] span {
+        font-size: 11px !important;
+        max-width: 60px !important;
+    }
+    
+    .data-table td[data-label="Двубой"] .result-badge {
+        font-size: 12px !important;
+        padding: 1px 6px !important;
+        min-width: 28px !important;
+    }
+    
+    .data-table td[data-label="Двубой"] div:last-child span {
+        font-size: 0.55rem !important;
+    }
+    
+    .btn-edit, .btn-del {
+        font-size: 11px !important;
+        padding: 5px 8px !important;
+        min-width: 50px !important;
+    }
+    
+    .tab-btn {
+        padding: 6px 10px !important;
+        font-size: 11px !important;
+    }
+    
+    .modal-content {
+        padding: 15px !important;
+    }
+    
+    /* Мачове - още по-компактни */
+    .match-teams {
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+    }
+    
+    .team-home, .team-away {
+        flex: 1 1 100% !important;
+        justify-content: center !important;
+    }
+    
+    .team-name {
+        font-size: 12px !important;
+        max-width: 80px !important;
+    }
+}
+
+/* 19. ИЗКЛЮЧИТЕЛНО МАЛКИ ЕКРАНИ (под 360px) */
+@media (max-width: 360px) {
+    .nav-links li {
+        flex: 1 1 45% !important;
+        font-size: 9px !important;
+        padding: 6px 2px !important;
+    }
+    
+    .nav-links li a {
+        font-size: 9px !important;
+    }
+    
+    .nav-links li a i {
+        font-size: 10px !important;
+    }
+    
+    .stats-grid {
+        grid-template-columns: 1fr 1fr !important;
+        gap: 5px !important;
+    }
+    
+    .stat-card {
+        padding: 8px !important;
+    }
+    
+    .stat-card h3 {
+        font-size: 1rem !important;
+    }
+    
+    .stat-card p {
+        font-size: 0.65rem !important;
+    }
+    
+    .data-table td {
+        font-size: 11px !important;
+        padding: 4px 0 !important;
+    }
+    
+    .data-table td:before {
+        font-size: 9px !important;
+    }
+    
+    .data-table td[data-label="Двубой"] span {
+        font-size: 10px !important;
+        max-width: 45px !important;
+    }
+    
+    .data-table td[data-label="Двубой"] img {
+        width: 18px !important;
+        height: 18px !important;
+    }
+    
+    .data-table td[data-label="Двубой"] .result-badge {
+        font-size: 10px !important;
+        padding: 1px 4px !important;
+        min-width: 22px !important;
+    }
+    
+    .btn-edit, .btn-del {
+        font-size: 10px !important;
+        padding: 4px 6px !important;
+        min-width: 40px !important;
+    }
+}
+
+/* 20. ВЕРТИКАЛЕН ИЗГЛЕД НА МАЧОВЕТЕ В ТАБЛОТО - МОБИЛЕН */
+@media (max-width: 768px) {
+    /* Промяна на грида от 2 колони на 1 колона */
+    .dashboard-matches-grid {
+        grid-template-columns: 1fr !important;
+        gap: 15px !important;
+    }
+    
+    /* Оптимизация на отделните мачове */
+    .match-item {
+        padding: 15px !important;
+        margin-bottom: 10px !important;
+        border-bottom: 1px solid #eee !important;
+    }
+    
+    .match-item:last-child {
+        border-bottom: none !important;
+    }
+    
+    /* Отборите един под друг */
+    .match-item .match-teams {
+        flex-direction: column !important;
+        gap: 12px !important;
+        align-items: center !important;
+    }
+    
+    .match-item .team-container {
+        width: 100% !important;
+        justify-content: center !important;
+        gap: 12px !important;
+    }
+    
+    /* VS да е между отборите */
+    .match-item .match-vs {
+        order: 0 !important;
+        font-size: 16px !important;
+        padding: 4px 0 !important;
+        background: #f1f5f9;
+        border-radius: 20px;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+    }
+    
+    .match-item .team-container:first-child {
+        order: -1 !important;
+    }
+    
+    .match-item .team-container:last-child {
+        order: 1 !important;
+    }
+    
+    .match-item .team-logo {
+        width: 45px !important;
+        height: 45px !important;
+    }
+    
+    .match-item .team-name {
+        font-size: 15px !important;
+        font-weight: 600 !important;
+        max-width: 150px !important;
+    }
+    
+    .match-item .match-date {
+        font-size: 13px !important;
+        margin-bottom: 10px !important;
+        text-align: center !important;
+    }
+    
+    .match-item .match-result {
+        font-size: 18px !important;
+        margin-top: 8px !important;
+        text-align: center !important;
+    }
+}
+
+/* За много малки екрани (под 480px) */
+@media (max-width: 480px) {
+    .match-item {
+        padding: 12px !important;
+    }
+    
+    .match-item .team-logo {
+        width: 36px !important;
+        height: 36px !important;
+    }
+    
+    .match-item .team-name {
+        font-size: 13px !important;
+        max-width: 120px !important;
+    }
+    
+    .match-item .match-vs {
+        width: 32px !important;
+        height: 32px !important;
+        font-size: 13px !important;
+    }
+    
+    .match-item .match-date {
+        font-size: 11px !important;
+    }
+    
+    .match-item .match-result {
+        font-size: 15px !important;
+    }
+}
+
+/* За да сте сигурни, че на по-големи екрани е 2 колони */
+@media (min-width: 769px) {
+    .dashboard-matches-grid {
+        grid-template-columns: 1fr 1fr !important;
+    }
+    
+    .match-item .match-teams {
+        flex-direction: row !important;
+    }
+}
+
+/* 20. ВЕРТИКАЛЕН ИЗГЛЕД НА МАЧОВЕТЕ В ТАБЛОТО - МОБИЛЕН */
+@media (max-width: 768px) {
+    /* Промяна на грида от 2 колони на 1 колона */
+    .dashboard-matches-grid {
+        grid-template-columns: 1fr !important;
+        gap: 15px !important;
+    }
+    
+    /* Бързо търсене и Действие - едно под друго */
+    .dashboard-stats-grid {
+        grid-template-columns: 1fr !important;
+        gap: 10px !important;
+    }
+    
+    /* Оптимизация на отделните мачове */
+    .match-item {
+        padding: 15px !important;
+        margin-bottom: 10px !important;
+        border-bottom: 1px solid #eee !important;
+    }
+    
+    .match-item:last-child {
+        border-bottom: none !important;
+    }
+    
+    /* Отборите един под друг */
+    .match-item .match-teams {
+        flex-direction: column !important;
+        gap: 12px !important;
+        align-items: center !important;
+    }
+    
+    .match-item .team-container {
+        width: 100% !important;
+        justify-content: center !important;
+        gap: 12px !important;
+    }
+    
+    /* VS да е между отборите */
+    .match-item .match-vs {
+        order: 0 !important;
+        font-size: 16px !important;
+        padding: 4px 0 !important;
+        background: #f1f5f9;
+        border-radius: 20px;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+    }
+    
+    .match-item .team-container:first-child {
+        order: -1 !important;
+    }
+    
+    .match-item .team-container:last-child {
+        order: 1 !important;
+    }
+    
+    .match-item .team-logo {
+        width: 45px !important;
+        height: 45px !important;
+    }
+    
+    .match-item .team-name {
+        font-size: 15px !important;
+        font-weight: 600 !important;
+        max-width: 150px !important;
+    }
+    
+    .match-item .match-date {
+        font-size: 13px !important;
+        margin-bottom: 10px !important;
+        text-align: center !important;
+    }
+    
+    .match-item .match-result {
+        font-size: 18px !important;
+        margin-top: 8px !important;
+        text-align: center !important;
+    }
+    
+    /* Бутоните за действие да са в редица */
+    .action-buttons {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        gap: 8px !important;
+        justify-content: center !important;
+    }
+    
+    .action-buttons button {
+        flex: 1 !important;
+        min-width: 80px !important;
+        font-size: 12px !important;
+        padding: 8px 10px !important;
+    }
+}
+
+/* За много малки екрани (под 480px) */
+@media (max-width: 480px) {
+    .match-item {
+        padding: 12px !important;
+    }
+    
+    .match-item .team-logo {
+        width: 36px !important;
+        height: 36px !important;
+    }
+    
+    .match-item .team-name {
+        font-size: 13px !important;
+        max-width: 120px !important;
+    }
+    
+    .match-item .match-vs {
+        width: 32px !important;
+        height: 32px !important;
+        font-size: 13px !important;
+    }
+    
+    .match-item .match-date {
+        font-size: 11px !important;
+    }
+    
+    .match-item .match-result {
+        font-size: 15px !important;
+    }
+    
+    .action-buttons button {
+        font-size: 11px !important;
+        padding: 6px 8px !important;
+        min-width: 60px !important;
+    }
+}
+
+/* За да сте сигурни, че на по-големи екрани е 2 колони */
+@media (min-width: 769px) {
+    .dashboard-matches-grid {
+        grid-template-columns: 1fr 1fr !important;
+    }
+    
+    .dashboard-stats-grid {
+        grid-template-columns: 1fr 1fr !important;
+    }
+    
+    .match-item .match-teams {
+        flex-direction: row !important;
+    }
+}

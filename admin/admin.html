@@ -1,0 +1,79 @@
+<!-- admin.html -->
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Football Admin Panel v3.2</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <!-- Мобилен CSS - зарежда се само на малки екрани -->
+    <link rel="stylesheet" href="mobile-style.css" media="(max-width: 992px)">
+</head>
+<body>
+    <div class="admin-container">
+        <nav class="sidebar">
+            <div class="sidebar-header">
+                <div class="user-info">
+                    <div style="text-align: right; margin-right: 10px;">
+                        <span id="current-user-role" style="font-size: 0.75rem; color: var(--primary); text-transform: uppercase;">-</span>
+                        <span id="current-user-email" style="display: block; font-weight: bold; font-size: 0.9rem;">Зареждане...</span>
+                        <span id="current-user-role" style="font-size: 0.75rem; color: var(--primary); text-transform: uppercase;"><a href="#" onclick="logout()"><button class="fas fa-sign-out-alt">Изход</button></a></span>
+                    </div>
+                    <div class="avatar" data-section="users-manage" style="cursor:pointer; position: relative;">
+                        <i class="fas fa-user-circle fa-2x"></i>
+                        <div id="admin-badge" style="display:none; position: absolute; bottom: 0; right: 0; background: red; width: 10px; height: 10px; border-radius: 50%; border: 2px solid white;"></div>
+                    </div>
+                </div> 
+            </div>
+            <ul class="nav-links">
+                <li><a href="../index.html" onclick=""><i class="fas fa-sign-out-alt"></i> Върни се в сайта</a></li>
+                <li class="active" data-section="dashboard"><a href="#"><i class="fas fa-chart-line"></i> Табло</a></li>
+                <li data-section="clubs"><a href="#"><i class="fas fa-shield-halved"></i> Клубове</a></li>
+                <li data-section="players"><a href="#"><i class="fas fa-users"></i> Играчи</a></li>
+                <li data-section="matches"><a href="#"><i class="fas fa-calendar-alt"></i> Мачове</a></li>
+                <li data-section="music"><i class="fas fa-music"></i> Музикален плейър</li>
+                <li data-section="users-manage" id="nav-users" style="display:none;"><a href="#"><i class="fas fa-user-shield"></i> Потребители</a></li>
+            </ul>
+        </nav>
+        <main class="content">
+            <header class="content-header">
+                <h1 id="section-title">Табло</h1>
+            </header>
+            
+            <div id="dynamic-content"></div>
+            
+            <!-- ИНФО СЕКЦИЯ - САМО ЗА АДМИНИСТРАТОРИ -->
+            <div id="info-section" class="muted" style="display:none;">
+                <center><br><br>
+                <table border="1" cellpadding="8" cellspacing="10">
+                    <tr>
+                        <td>Всички данни се съхраняват в Firebase реално време.</td>
+                        <td>Файловете като музика и снимки се съхраняват в dropbox.</td>
+                        <td>Логотата се съхраняват в Cloudinary.</td>
+                    </tr>
+                    <tr>
+                        <td>
+						Firebase базата с данни е на адрес:<br> <a href="https://console.firebase.google.com/project/studious-loader-483606-b9/overview" target="_blank">Hello, Пенко Welcome back to Firebase!</a><br> Google Account<br> Пенко Стрелков<br> grafdevil@gmail.com
+						</td>
+						
+                        <td>
+						Файловете са на адрес:<br> <a href="https://www.dropbox.com/home?_tk=web_left_nav_bar&di=left_nav" target="_blank">Folders DropBox</a><br>DropBox Account<br>Google Account<br>Пенко Стрелков<br>p.strelkov@abv.bg
+						</td>
+						
+                        <td>
+						Логотата са на адрес:<br> <a href="https://console.cloudinary.com/app/c-b82b09e1a8b34e04fb55f4cfa0bbbf/assets/media_library/folders/cfc9748d97891db7a24bf718942a61aaa5?view_mode=list" target="_blank">Cloudinary</a><br>Cloudinary Account<br>Google Account<br>Пенко Стрелков<br>grafdevil@gmail
+						</td>
+                    </tr>
+                </table>
+                </center>
+            </div>
+            
+        </main>
+    </div>
+    <button id="backToTop"><i class="fas fa-arrow-up"></i></button>
+    <script type="module" src="app.js"></script>
+</body>
+</html>

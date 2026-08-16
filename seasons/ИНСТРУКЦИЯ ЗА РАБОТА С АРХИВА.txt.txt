@@ -1,0 +1,24 @@
+1. Сед приключване на сезона се прави бекъп на базата с данни: 
+	https://console.firebase.google.com/project/studious-loader-483606-b9/database/studious-loader-483606-b9-default-rtdb/data
+		като се кликне в горният десен ъгъл на трите точки, след което се кликва на Export JSON и се запазва на компютъра.
+2. Запазеният JSON ( най-вероятно ще се казва studious-loader-483606-b9-default-rtdb-export.json ), го преименуваме на сезона ( 2025-2026.json )
+
+3. Вече подготвеният файт се казва на сървъра в папката seasons/json ( сега има такъв който е за проба заменяме го )
+
+4. От сървъра в папката seasons/ намираме seasons.js и го отваряме за редакция.
+	В началните редове тряжва да намерим кода: 
+
+		async function loadArchivedSeasons() {
+		    const container = document.getElementById("archived-wrapper");
+		    if (!container) return;
+
+		    const seasons = [
+		//	"2023-2024.json", 
+		//	"2024-2025.json", 
+		//	"2025-2026.json"
+			];
+
+	След като намерим кода махваме двете наклонени черти пред "2025-2026.json". 
+
+5. За следващи сезони добавяме имената на сезоните... 
+				

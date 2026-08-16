@@ -1,0 +1,117 @@
+// next-matches.js
+
+const MATCH_INTERVAL = 7000; // Време за показване на всеки мач (7000ms = 7 секунди)
+const CSKA_ID = 'club_twzo7j6'; // Уникалното ID на ЦСКА в твоя JSON файл
+
+let clubsMap = {};      // Обект, който ще служи като речник за бързо намиране на отбори
+let futureMatches = []; // Масив, в който ще съхраняваме само бъдещите мачове
+let matchIndex = 0;     // Индекс на текущо показвания мач
+
+// Вземане на референции към DOM елементите (HTML кутиите)
+const panel = document.getElementById('nextMatchPanel'); // Основният панел
+const homeLogo = document.getElementById('homeLogo');     // Лого на домакина
+const awayLogo = document.getElementById('awayLogo');     // Лого на госта
+const matchNames = document.getElementById('matchNames'); // Имената на отборите
+const matchDate = document.getElementById('matchDate');   // Дата и час на мача
+const matchInfo = document.getElementById('matchInfo');   // Име на турнир и кръг
+
+// ----------------- Зареждане на данните -----------------
+fetch('football-archive.json')
+  .then(r => r.json()) // Превръща JSON файла в JavaScript обект
+  .then(data => {
+
+    // 1. Клубове → Map: Превръщаме масива с клубове в удобен речник за бързо търсене по ID
+    data.clubs.forEach(c => {
+      clubsMap[c.id] = c;
+    });
+
+    // 2. Филтриране: Вземаме текущата дата и час
+    const now = new Date();
+
+    // Създаваме списък само с мачове, в които участва ЦСКА и датата им е в бъдещето
+    futureMatches = data.matches
+      .filter(m =>
+        (m.home === CSKA_ID || m.away === CSKA_ID) && // Участва ли ЦСКА?
+        new Date(m.datetime) > now // Мачът след текущия момент ли е?
+      )
+      // Сортираме мачовете така, че най-близкият във времето да е пръв
+      .sort((a, b) => new Date(a.datetime) - new Date(b.datetime));
+
+    // Ако няма намерени бъдещи мачове, изписваме съобщение в панела
+    if (!futureMatches.length) {
+      panel.innerHTML = `
+        <div style="text-align:center; opacity:0.8;">
+          Няма предстоящи мачове.
+        </div>
+      `;
+      return;
+    }
+
+    // Показваме първия намерен мач веднага (без начална анимация)
+    showMatch(futureMatches[0], false);
+    
+    // Стартираме автоматична смяна на мачовете на всеки 7 секунди
+    setInterval(changeMatch, MATCH_INTERVAL);
+  });
+
+// ----------------- Функция за показване на мач -----------------
+function showMatch(m, animate = true) {
+
+  // Извличаме пълните данни за отборите (имена, лога) от нашия речник (clubsMap)
+  const home = clubsMap[m.home];
+  const away = clubsMap[m.away];
+
+  // Обработка на датата
+  const d = new Date(m.datetime);
+
+  // Форматираме датата за български стандарт (ДД.ММ.ГГГГ)
+  const dateStr = d.toLocaleDateString('bg-BG', {
+    day: '2-digit',
+    month: '2-digit',
+    year: 'numeric'
+  });
+
+  // Форматираме часа (ЧЧ:ММ)
+  const timeStr = d.toLocaleTimeString('bg-BG', {
+    hour: '2-digit',
+    minute: '2-digit'
+  });
+
+  // Списък с елементите, които ще анимираме (логота и текстове)
+  const elements = [
+    homeLogo,
+    awayLogo,
+    matchNames,
+    matchDate,
+    matchInfo
+  ];
+
+  // Ако е зададена анимация, първо правим елементите невидими
+  if (animate) {
+    elements.forEach(e => e.style.opacity = 0);
+  }
+
+  // След 200ms обновяваме съдържанието им (докато са невидими)
+  setTimeout(() => {
+    homeLogo.src = home?.logo || ''; // Сменяме логото на домакина
+    awayLogo.src = away?.logo || ''; // Сменяме логото на госта
+    matchNames.textContent = `${home?.name} – ${away?.name}`; // Имената на отборите
+    matchDate.textContent = `${dateStr} • ${timeStr}`; // Дата и час
+    // Турнир и (ако има) номер на кръга
+    matchInfo.textContent =
+      `${m.tournament}${m.round ? ' | Кръг ' + m.round : ''}`;
+  }, 200);
+
+  // След още 200ms (общо 400ms) ги правим отново видими с плавен преход
+  setTimeout(() => {
+    elements.forEach(e => e.style.opacity = 1);
+  }, 400);
+}
+
+// ----------------- Функция за смяна на мачовете в цикъла -----------------
+function changeMatch() {
+  // Увеличаваме индекса с 1 и го нулираме, ако стигнем до края на масива
+  matchIndex = (matchIndex + 1) % futureMatches.length;
+  // Извикваме функцията за показване с включена анимация
+  showMatch(futureMatches[matchIndex], true);
+}

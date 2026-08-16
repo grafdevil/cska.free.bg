@@ -1,0 +1,98 @@
+/* --------------------------------------------------------------------------
+   FOOTER (ФУТЪР) - ДОЛНА ЧАСТ НА САЙТА
+   -------------------------------------------------------------------------- */
+
+/* Основен контейнер на футъра */
+#footer {
+    /* Плавни преходи за трансформации, филтри и прозрачност (съвместимост с Firefox) */
+    -moz-transition: -moz-transform 0.325s ease-in-out, -moz-filter 0.325s ease-in-out, opacity 0.325s ease-in-out;
+    /* Същите преходи, оптимизирани за Chrome, Safari и по-стари браузъри */
+    -webkit-transition: -webkit-transform 0.325s ease-in-out, -webkit-filter 0.325s ease-in-out, opacity 0.325s ease-in-out;
+    /* Същите преходи за по-стари версии на Internet Explorer */
+    -ms-transition: -ms-transform 0.325s ease-in-out, -ms-filter 0.325s ease-in-out, opacity 0.325s ease-in-out;
+    /* Стандартен CSS преход за плавни анимации на движение, филтри и видимост */
+    transition: transform 0.325s ease-in-out, filter 0.325s ease-in-out, opacity 0.325s ease-in-out;
+
+    width: fit-content;                       /* Ширината на футъра се напасва точно според съдържанието вътре */
+    max-width: 100%;                           /* Ограничава футъра да не става по-широк от самия екран */
+    margin: 10px auto 0 auto;                  /* 40px разстояние отгоре и автоматично центриране хоризонтално */
+    padding: 15px 25px;                        /* Вътрешно пространство: 10px горе/долу и 25px ляво/дясно */
+    text-align: center;                         /* Центрира целия текст вътре във футъра */
+
+    background: var(--card-bg);                /* Използва цвета за фон, дефиниран в глобалните променливи */
+    border: 2px solid rgba(255, 255, 255, 0.3); /* Тънка полупрозрачна бяла рамка (30% прозрачност) */
+    border-radius: 15px;                       /* Заобля ъглите на футъра с 15 пиксела */
+    backdrop-filter: blur(8px);                /* Ефект на замаглено стъкло върху фона зад футъра */
+    -webkit-backdrop-filter: blur(8px);        /* Поддръжка на ефекта замаглено стъкло за Safari */
+    box-shadow: var(--box-shadow);             /* Добавя сянка от системна променлива */
+    
+    color: #fff;                               /* Цвят на текста: чисто бяло */
+    font-family: system-ui, sans-serif;        /* Използва вградения шрифт на операционната система */
+    font-weight: 500;                           /* Средна дебелина на шрифта */
+    font-size: 15px;                            /* Размер на буквите: 15 пиксела */
+    letter-spacing: 0.3px;                     /* Добавя 0.3px разстояние между буквите за по-добра четимост */
+    
+    /* Плавни преходи при hover (посочване) за ефектите на стъклото, фона и сянката */
+    transition: backdrop-filter 0.3s, background 0.3s, box-shadow 0.3s;
+}
+
+/* Промяна при посочване с мишката върху футъра */
+#footer:hover {
+    backdrop-filter: blur(2px);                /* Намалява замагляването, правейки фона по-ясен */
+    -webkit-backdrop-filter: blur(2px);        /* Поддръжка за Safari */
+    background: var(--card-bg-hover);          /* Сменя фоновия цвят спрямо hover променливата */
+    box-shadow: var(--box-shadow-hover);       /* Сменя сянката (вероятно става вътрешна за ефект на "вдлъбване") */
+}
+
+/* Стил за текста за авторски права (copyright) вътре във футъра */
+#footer .copyright {
+    letter-spacing: 0.2rem;                   /* Засилено разстояние между буквите (0.2 rem) */
+    font-size: 0.6rem;                        /* Много малък размер на буквите (около 9.6 пиксела) */
+    opacity: 0.75;                             /* Прави текста леко прозрачен (75% видимост) */
+    margin-bottom: 0;                           /* Премахва разстоянието под текста */
+    text-transform: uppercase;                 /* Превръща автоматично всички букви в главни */
+}
+
+/* --------------------------------------------------------------------------
+   КРАЙ НА СЕКЦИЯ FOOTER
+   -------------------------------------------------------------------------- */
+
+
+/* Подреждане в решетка */
+.footer-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px; /* Разстояние между трите колони */
+    flex-wrap: wrap; /* За мобилни устройства */
+}
+
+/* Всяка колона: заглавието над линка */
+.footer-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Стил за заглавията (надписите в <b>) */
+#footer b {
+    font-size: 0.7rem; /* Малко по-голямо от вашия 0.6rem за четимост */
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    opacity: 0.8;
+    margin-bottom: 4px; /* Разстояние до линка отдолу */
+}
+
+/* Стил за линковете под заглавията */
+#footer a {
+    font-size: 0.85rem;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: color 0.3s;
+}
+
+#footer a:hover {
+    color: var(--accent-color, #ff0000); /* Сменя цвета при посочване */
+}
+
+

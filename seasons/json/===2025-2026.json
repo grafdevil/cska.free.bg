@@ -1,0 +1,847 @@
+{
+  "clubs": [
+    {
+      "id": "club_twzo7j6",
+      "name": "ЦСКА (София)",
+      "logo": "https://sportal365images.com/process/smp-images-production/assets/03092025/9456e279-8cf2-4895-9443-7df8c0bf213e.png?operations=autocrop(150:150)"
+    },
+    {
+      "id": "club_5ut8gky",
+      "name": "Левски (София)",
+      "logo": "https://sportal365images.com/process/smp-images-production/assets/team/logo/2-Levski-Sofia-logo.png"
+    },
+    {
+      "id": "club_exve52l",
+      "name": "Лудогорец 1945 (Разград)",
+      "logo": "https://sportal365images.com/process/smp-images-production/assets/18062021/1624016476699.png?operations=autocrop(150:150)"
+    },
+    {
+      "id": "club_gr74jwe",
+      "name": "Бистрица",
+      "logo": "https://sportal365images.com/process/smp-images-production/assets/10102025/af9a503d-45bb-4340-890c-66d20f802bcb.png"
+    },
+    {
+      "id": "club_bde32v5",
+      "name": "Черно море (Варна)",
+      "logo": "https://sportal365images.com/process/smp-images-production/assets/team/logo/15-Cherno-More-Varna-logo.png"
+    },
+    {
+      "id": "club_htg2w27",
+      "name": "Локомотив 1926 (Пловдив)",
+      "logo": "https://sportal365images.com/process/smp-images-production/assets/20072021/1626789441187.png?operations=crop(0:0:150:150)"
+    },
+    {
+      "id": "club_etzpemv",
+      "name": "Ботев (Враца)",
+      "logo": "https://sportal365images.com/process/smp-images-production/assets/15082024/a6cd9562-c956-4776-84d0-84b784dde965.svg?operations=autocrop(150:150)"
+    },
+    {
+      "id": "club_bys0j6o",
+      "name": "Берое (Стара Загора)",
+      "logo": "https://sportal365images.com/process/smp-images-production/assets/team/logo/4-Beroe-logo.png"
+    },
+    {
+      "id": "club_jhuo9ct",
+      "name": "Спартак 1918 (Варна)",
+      "logo": "https://sportal365images.com/process/smp-images-production/assets/11032021/1615465401411.png?operations=autocrop(150:150)"
+    },
+    {
+      "id": "club_8pacpus",
+      "name": "Локомотив София 1929 (София)",
+      "logo": "https://sportal365images.com/process/smp-images-production/assets/01032021/1614602582012.png?operations=autocrop(150:150)"
+    },
+    {
+      "id": "club_3pr9nhf",
+      "name": "Арда 1924 (Кърджали)",
+      "logo": "https://sportal365images.com/process/smp-images-production/assets/21082025/4942be1a-cf85-4ba1-a6d5-38ec7cd7cfba.png?operations=crop(0:0:150:150)"
+    },
+    {
+      "id": "club_jrgqwhm",
+      "name": "Монтана (Монтана)",
+      "logo": "https://sportal365images.com/process/smp-images-production/assets/team/logo/23-Montana-logo.png"
+    },
+    {
+      "id": "club_0md70ap",
+      "name": "Славия 1913 (София)",
+      "logo": "https://sportal365images.com/process/smp-images-production/assets/27012025/2e5c7ae3-7b01-4b9e-90a9-20bd0cf94111.png?operations=autocrop(150:150)"
+    },
+    {
+      "id": "club_msphhhg",
+      "name": "Ботев (Пловдив)",
+      "logo": "https://sportal365images.com/process/smp-images-production/assets/15032021/1615811475705.png?operations=autocrop(150:150)"
+    },
+    {
+      "id": "club_anq537i",
+      "name": "Септември (София)",
+      "logo": "https://sportal365images.com/process/smp-images-production/assets/01032021/1614602934115.png?operations=autocrop(150:150)"
+    },
+    {
+      "id": "club_n81mqbr",
+      "name": "Добруджа (Добрич)",
+      "logo": "https://sportal365images.com/process/smp-images-production/assets/01042022/ac2156a9-0431-4080-b4c7-5e54e3abc060.png?operations=autocrop(150:150)"
+    },
+    {
+      "id": "club_efir706",
+      "name": "Севлиево (Севлиево)",
+      "logo": "https://static.flashscore.com/res/image/data/EFucOWDa-fLoFfsdH.png"
+    },
+    {
+      "id": "club_iaic2vg",
+      "name": "Korona Kielce",
+      "logo": "https://tmssl.akamaized.net//images/wappen/head/6110.png?lm=1444671585"
+    },
+    {
+      "id": "club_q936r99",
+      "name": "FK Mlada Boleslav",
+      "logo": "https://tmssl.akamaized.net//images/wappen/head/5546.png?lm=1419784887"
+    },
+    {
+      "id": "club_gqogete",
+      "name": "LNZ Cherkasy",
+      "logo": "https://tmssl.akamaized.net//images/wappen/head/63007.png?lm=1616575460"
+    },
+    {
+      "id": "club_igpjkqw",
+      "name": "FK Novi Pazar",
+      "logo": "https://tmssl.akamaized.net//images/wappen/head/4633.png?lm=1411382255"
+    },
+    {
+      "id": "club_67fgvoi",
+      "name": "Дунав Русе",
+      "logo": "https://tmssl.akamaized.net//images/wappen/head/19780.png?lm=1706216676"
+    }
+  ],
+  "matches": [
+    {
+      "id": "m_stgzq8m",
+      "datetime": "2025-07-19T19:00:00.000Z",
+      "home": "club_msphhhg",
+      "away": "club_twzo7j6",
+      "venue": "ст. \"Христо Ботев\" - Пловдив",
+      "notes": "",
+      "result": "1-1",
+      "youtube": "https://www.youtube.com/embed/04z9KyHsH48?si=fiQHWWCpjHNSAaj1",
+      "tournament": "Първенство",
+      "round": "1"
+    },
+    {
+      "id": "m_cbicc7j",
+      "datetime": "2025-07-26T18:15:00.000Z",
+      "home": "club_twzo7j6",
+      "away": "club_jhuo9ct",
+      "venue": "Национален стадион \"Васил Левски\" - София",
+      "notes": "",
+      "result": "1-1",
+      "youtube": "https://www.youtube.com/embed/BW2FFJFGIfs?si=Rgc7ZrC9CPttSF3o",
+      "tournament": "Първенство",
+      "round": "2"
+    },
+    {
+      "id": "m_7klillw",
+      "datetime": "2025-08-02T16:00:00.000Z",
+      "home": "club_htg2w27",
+      "away": "club_twzo7j6",
+      "venue": "ст. \"Локомотив\" - Пловдив",
+      "notes": "",
+      "result": "1-0",
+      "youtube": "https://www.youtube.com/embed/QZQGxdXCZOA?si=2gVpdvbrPAfEMc2c",
+      "tournament": "Първенство",
+      "round": "3"
+    },
+    {
+      "id": "m_iimu0j4",
+      "datetime": "2025-08-09T16:00:00.000Z",
+      "home": "club_twzo7j6",
+      "away": "club_bde32v5",
+      "venue": "Национален стадион \"Васил Левски\" - София",
+      "notes": "",
+      "result": "0-0",
+      "youtube": "https://www.youtube.com/embed/9YIo3WH32ts?si=-vnlshFqVx6dd8rl",
+      "tournament": "Първенство",
+      "round": "4"
+    },
+    {
+      "id": "m_xeznx0x",
+      "datetime": "2025-08-24T17:15:00.000Z",
+      "home": "club_twzo7j6",
+      "away": "club_gr74jwe",
+      "venue": "Национален стадион \"Васил Левски\" - София",
+      "notes": "",
+      "result": "0-1",
+      "youtube": "https://www.youtube.com/embed/YB8bTkjTRSU?si=uhons2h97Hx6fVy-",
+      "tournament": "Първенство",
+      "round": "5"
+    },
+    {
+      "id": "m_b9m3jnb",
+      "datetime": "2025-08-30T18:15:00.000Z",
+      "home": "club_0md70ap",
+      "away": "club_twzo7j6",
+      "venue": "ст. \"Александър Шаламанов\" - София",
+      "notes": "",
+      "result": "2-2",
+      "youtube": "https://www.youtube.com/embed/wOjhgTiccPs?si=C6NJvnpMpZDHeUbb",
+      "tournament": "Първенство",
+      "round": "6"
+    },
+    {
+      "id": "m_l3lkd0o",
+      "datetime": "2025-09-13T17:15:00.000Z",
+      "home": "club_twzo7j6",
+      "away": "club_anq537i",
+      "venue": "Национален стадион \"Васил Левски\" - София",
+      "notes": "",
+      "result": "3-1",
+      "youtube": "https://www.youtube.com/embed/Xno48NYjl_s?si=0e5vA0GMuLH1LXlf",
+      "tournament": "Първенство",
+      "round": "7"
+    },
+    {
+      "id": "m_nz1mf76",
+      "datetime": "2025-09-18T14:30:00.000Z",
+      "home": "club_3pr9nhf",
+      "away": "club_twzo7j6",
+      "venue": "ст. \"Берое\" - Стара Загора",
+      "notes": "",
+      "result": "1-0",
+      "youtube": "https://www.youtube.com/embed/Gl85C1HY5YU?si=wET_t6VS6v1OH_Mi",
+      "tournament": "Първенство",
+      "round": "8"
+    },
+    {
+      "id": "m_1w07n7b",
+      "datetime": "2025-09-22T17:30:00.000Z",
+      "home": "club_etzpemv",
+      "away": "club_twzo7j6",
+      "venue": "ст. \"Христо Ботев\" - Враца",
+      "notes": "",
+      "result": "1-1",
+      "youtube": "https://www.youtube.com/embed/Hkoq5acG7lY?si=jI2WfKtl8_WlNNFN",
+      "tournament": "Първенство",
+      "round": "9"
+    },
+    {
+      "id": "m_g99ovcd",
+      "datetime": "2025-09-27T17:00:00.000Z",
+      "home": "club_8pacpus",
+      "away": "club_twzo7j6",
+      "venue": "ст. \"Локомотив\" - София",
+      "notes": "",
+      "result": "1-1",
+      "youtube": "https://www.youtube.com/embed/vRO7bibvpf4?si=dmMEE8rm7O7HtNOA",
+      "tournament": "Първенство",
+      "round": "10"
+    },
+    {
+      "id": "m_wp5asc0",
+      "datetime": "2025-10-05T17:15:00.000Z",
+      "home": "club_twzo7j6",
+      "away": "club_exve52l",
+      "venue": "Национален стадион \"Васил Левски\" - София",
+      "notes": "",
+      "result": "0-0",
+      "youtube": "https://www.youtube.com/embed/t2kGBAJYZFw?si=ClQ1bUQZ_cOlLj1V",
+      "tournament": "Първенство",
+      "round": "11"
+    },
+    {
+      "id": "m_9i2fkuh",
+      "datetime": "2025-10-19T12:00:00.000Z",
+      "home": "club_n81mqbr",
+      "away": "club_twzo7j6",
+      "venue": "ст. \"Дружба\" - Добрич",
+      "notes": "",
+      "result": "0-1",
+      "youtube": "https://www.youtube.com/embed/VlgR_iVM0IU?si=YCOaDYC1Cn7ggnH2",
+      "tournament": "Първенство",
+      "round": "12"
+    },
+    {
+      "id": "m_29pmfh6",
+      "datetime": "2025-10-26T15:15:00.000Z",
+      "home": "club_twzo7j6",
+      "away": "club_bys0j6o",
+      "venue": "Национален стадион \"Васил Левски\"",
+      "notes": "Играе се на Национален стадион \"Васил Левски\" заради ремонт на стадион \"Българска армия\"",
+      "result": "5-1",
+      "youtube": "https://www.youtube.com/embed/dpu8OAgoefk?si=DCPn5dNVHxuRYJsS",
+      "tournament": "Първенство",
+      "round": "13"
+    },
+    {
+      "id": "m_72w6ev1",
+      "datetime": "2025-11-02T10:45:00.000Z",
+      "home": "club_twzo7j6",
+      "away": "club_jrgqwhm",
+      "venue": "Национален стадион \"Васил Левски\"",
+      "notes": "Играе се на Национален стадион \"Васил Левски\" заради ремонт на стадион \"Българска армия\"",
+      "result": "3-1",
+      "youtube": "https://www.youtube.com/embed/F2539XyKBTQ?si=bdA_zQe5mO4dNHJX",
+      "tournament": "Първенство",
+      "round": "14"
+    },
+    {
+      "id": "m_sb34m15",
+      "datetime": "2025-11-08T13:00:00.000Z",
+      "home": "club_5ut8gky",
+      "away": "club_twzo7j6",
+      "venue": "Национален стадион \"Васил Левски\"",
+      "notes": "",
+      "result": "0-1",
+      "youtube": "https://www.youtube.com/embed/3E8FLcxaFZE?si=hDcWkanrJaGfVgZU",
+      "tournament": "Първенство",
+      "round": "15"
+    },
+    {
+      "id": "m_yfxoqb8",
+      "datetime": "2025-10-29T11:30:00.000Z",
+      "home": "club_efir706",
+      "away": "club_twzo7j6",
+      "venue": "Стадион Раковски (Севлиево)",
+      "notes": "",
+      "tournament": "Купа на България",
+      "round": "1/16",
+      "result": "1-2",
+      "youtube": "https://www.youtube.com/embed/wieMTAXOqEY?si=ZVYZy7adfDiBU5oQ"
+    },
+    {
+      "id": "m_diws4c0",
+      "datetime": "2025-10-11T08:00:00.000Z",
+      "home": "club_twzo7j6",
+      "away": "club_anq537i",
+      "venue": "Панчарево",
+      "notes": "",
+      "tournament": "Контролна среща",
+      "result": "4-0",
+      "youtube": "https://www.youtube.com/embed/XKDq9XKp8aE?si=0UTW02X1XMDcG7mB"
+    },
+    {
+      "id": "m_9p53z3n",
+      "datetime": "2025-11-22T17:00",
+      "home": "club_twzo7j6",
+      "away": "club_msphhhg",
+      "venue": "National Stadium Vasil Levski (Sofia)",
+      "notes": "",
+      "tournament": "Първенство",
+      "result": "2-1",
+      "youtube": "https://www.youtube.com/embed/6FRxQQ_0kPs?si=BtR1_VUrVWWgUcp-",
+      "round": "16"
+    },
+    {
+      "id": "m_trhqunc",
+      "datetime": "2025-11-29T17:30",
+      "home": "club_jhuo9ct",
+      "away": "club_twzo7j6",
+      "venue": "Стадион \"Спартак\" - Варна",
+      "notes": "",
+      "tournament": "Първенство",
+      "result": "0-4",
+      "youtube": "https://www.youtube.com/embed/DahjgVkiBZw?si=5vQ2i4WVl9zmdZ7N",
+      "round": "17"
+    },
+    {
+      "id": "m_zi3jila",
+      "datetime": "2025-12-03T18:00",
+      "home": "club_twzo7j6",
+      "away": "club_htg2w27",
+      "venue": "Национален стадион \"Васил Левски\"",
+      "notes": "",
+      "tournament": "Първенство",
+      "result": "2-1",
+      "youtube": "https://www.youtube.com/embed/0J_42o6lCZw?si=_9Zd80Hf9e0fCX8F",
+      "round": "18"
+    },
+    {
+      "id": "m_1uswoaw",
+      "datetime": "2025-12-06T17:30",
+      "home": "club_bde32v5",
+      "away": "club_twzo7j6",
+      "venue": "стадион \"Тича\", гр. Варна",
+      "notes": "",
+      "tournament": "Първенство",
+      "result": "2-0",
+      "youtube": "https://www.youtube.com/embed/XyQgTwb-nwQ?si=QQvP9q-G5ZD6GstC",
+      "round": "19"
+    },
+    {
+      "id": "m_4p2a8fu",
+      "datetime": "2025-12-13T18:00",
+      "home": "club_twzo7j6",
+      "away": "club_8pacpus",
+      "venue": "Национален стадион \"Васил Левски\"",
+      "notes": "1/8 от купа на България",
+      "tournament": "Купа на България",
+      "result": "2-1",
+      "youtube": "https://www.youtube.com/embed/86H6c_jcsyw?si=2Uo3ph3tUYsVrXdR",
+      "round": "1/8"
+    },
+    {
+      "id": "m_36zrx7i",
+      "datetime": "2026-02-07T18:00",
+      "home": "club_twzo7j6",
+      "away": "club_3pr9nhf",
+      "venue": "Национален стадион \"Васил Левски\"",
+      "notes": "",
+      "tournament": "Първенство",
+      "round": "20",
+      "result": null,
+      "youtube": null
+    },
+    {
+      "id": "m_4l9wbm7",
+      "datetime": "2026-02-14T18:00",
+      "home": "club_gr74jwe",
+      "away": "club_twzo7j6",
+      "venue": "\"Витоша\", Бистрица",
+      "notes": "",
+      "tournament": "Първенство",
+      "round": "21",
+      "result": null,
+      "youtube": null
+    },
+    {
+      "id": "m_tnr7jq2",
+      "datetime": "2026-02-21T18:00",
+      "home": "club_twzo7j6",
+      "away": "club_0md70ap",
+      "venue": "Национален стадион \"Васил Левски\"",
+      "notes": "",
+      "tournament": "Първенство",
+      "round": "22",
+      "result": null,
+      "youtube": null
+    },
+    {
+      "id": "m_gsgcngv",
+      "datetime": "2026-02-28T18:00",
+      "home": "club_anq537i",
+      "away": "club_twzo7j6",
+      "venue": "\"Локомотив\", София",
+      "notes": "",
+      "tournament": "Първенство",
+      "round": "23",
+      "result": null,
+      "youtube": null
+    },
+    {
+      "id": "m_jmjit4f",
+      "datetime": "2026-03-04T18:00",
+      "home": "club_twzo7j6",
+      "away": "club_etzpemv",
+      "venue": "Национален стадион \"Васил Левски\"",
+      "notes": "",
+      "tournament": "Първенство",
+      "round": "24",
+      "result": null,
+      "youtube": null
+    },
+    {
+      "id": "m_2zstcve",
+      "datetime": "2026-03-07T18:00",
+      "home": "club_twzo7j6",
+      "away": "club_8pacpus",
+      "venue": "Национален стадион \"Васил Левски\"",
+      "notes": "",
+      "tournament": "Първенство",
+      "round": "25",
+      "result": null,
+      "youtube": null
+    },
+    {
+      "id": "m_jrshgjt",
+      "datetime": "2026-03-14T18:00",
+      "home": "club_exve52l",
+      "away": "club_twzo7j6",
+      "venue": "\"Хювефарма Арена\"",
+      "notes": "",
+      "tournament": "Първенство",
+      "round": "26",
+      "result": null,
+      "youtube": null
+    },
+    {
+      "id": "m_3ofjokj",
+      "datetime": "2026-03-21T18:00",
+      "home": "club_twzo7j6",
+      "away": "club_n81mqbr",
+      "venue": "Национален стадион \"Васил Левски\"",
+      "notes": "",
+      "tournament": "Първенство",
+      "round": "27",
+      "result": null,
+      "youtube": null
+    },
+    {
+      "id": "m_oog8bhf",
+      "datetime": "2026-04-04T18:00",
+      "home": "club_bys0j6o",
+      "away": "club_twzo7j6",
+      "venue": "\"Берое\"",
+      "notes": "",
+      "tournament": "Първенство",
+      "round": "28",
+      "result": null,
+      "youtube": null
+    },
+    {
+      "id": "m_cxskg1y",
+      "datetime": "2026-04-11T18:00",
+      "home": "club_jrgqwhm",
+      "away": "club_twzo7j6",
+      "venue": "\"Огоста\"",
+      "notes": "",
+      "tournament": "Първенство",
+      "round": "29",
+      "result": null,
+      "youtube": null
+    },
+    {
+      "id": "m_sy7tor6",
+      "datetime": "2026-04-18T18:00",
+      "home": "club_twzo7j6",
+      "away": "club_5ut8gky",
+      "venue": "Национален стадион \"Васил Левски\"",
+      "notes": "",
+      "tournament": "Първенство",
+      "round": "30",
+      "result": null,
+      "youtube": null
+    },
+    {
+      "id": "m_92a84h9",
+      "datetime": "2026-01-14T18:00",
+      "home": "club_twzo7j6",
+      "away": "club_iaic2vg",
+      "venue": "",
+      "notes": "",
+      "tournament": "Контролна среща",
+      "round": "",
+      "result": null,
+      "youtube": null
+    },
+    {
+      "id": "m_j4cqvu9",
+      "datetime": "2026-01-17T18:00",
+      "home": "club_twzo7j6",
+      "away": "club_q936r99",
+      "venue": "",
+      "notes": "",
+      "tournament": "Контролна среща",
+      "round": "",
+      "result": null,
+      "youtube": null
+    },
+    {
+      "id": "m_7jmulz0",
+      "datetime": "2026-01-21T18:00",
+      "home": "club_twzo7j6",
+      "away": "club_gqogete",
+      "venue": "",
+      "notes": "",
+      "tournament": "Контролна среща",
+      "round": "",
+      "result": null,
+      "youtube": null
+    },
+    {
+      "id": "m_r9cbjrf",
+      "datetime": "2026-01-23T18:00",
+      "home": "club_twzo7j6",
+      "away": "club_igpjkqw",
+      "venue": "",
+      "notes": "",
+      "tournament": "Контролна среща",
+      "round": "",
+      "result": null,
+      "youtube": null
+    },
+    {
+      "id": "m_h9ah9z1",
+      "datetime": "2026-01-31T18:00",
+      "home": "club_twzo7j6",
+      "away": "club_67fgvoi",
+      "venue": "",
+      "notes": "",
+      "tournament": "Контролна среща",
+      "round": "",
+      "result": null,
+      "youtube": null
+    },
+    {
+      "id": "m_p5dygcs",
+      "datetime": "2026-02-11T18:00",
+      "home": "club_twzo7j6",
+      "away": "club_gr74jwe",
+      "venue": "Национален стадион \"Васил Левски\"",
+      "notes": "",
+      "tournament": "Купа на България",
+      "round": "",
+      "result": null,
+      "youtube": null
+    }
+  ],
+  "players": [
+    {
+      "id": "p_x89y3c1",
+      "name": "Густаво Бусато",
+      "number": "1",
+      "position": "Вратар",
+      "nation": "Бразилия",
+      "age": "35",
+      "photo": "https://sportal365images.com/process/smp-images-production/assets/25102025/4f674278-a472-4fde-bdc1-5bb5d192cd98.png?operations=autocrop(277:388)"
+    },
+    {
+      "id": "p_41qin62",
+      "name": "Дейвид Пастор",
+      "number": "2",
+      "position": "Защитник",
+      "nation": "Бразилия",
+      "age": "25",
+      "photo": "https://sportal365images.com/process/smp-images-production/assets/25102025/eb9f0f4c-b162-46ee-befd-3f7c215ff439.png?operations=autocrop(277:388)"
+    },
+    {
+      "id": "p_fgwp0js",
+      "name": "Сейни Санянг",
+      "number": "3",
+      "position": "Защитник",
+      "nation": "Гамбия",
+      "age": "22",
+      "photo": "https://sportal365images.com/process/smp-images-production/assets/25102025/1f288edc-38e4-42d6-9bb7-0c8feea22e5c.png?operations=autocrop(277:388)"
+    },
+    {
+      "id": "p_m8l2mfz",
+      "name": "Адриан Лапеня",
+      "number": "4",
+      "position": "Защитник",
+      "nation": "Испания",
+      "age": "29",
+      "photo": "https://sportal365images.com/process/smp-images-production/assets/25102025/354cc6db-ec22-431c-a65b-d38d3374392e.png?operations=autocrop(277:388)"
+    },
+    {
+      "id": "p_pb1vypm",
+      "name": "Лумбард Делова",
+      "number": "5",
+      "position": "Защитник",
+      "nation": "Косово",
+      "age": "26",
+      "photo": "https://sportal365images.com/process/smp-images-production/assets/25102025/46627361-1213-4b14-ac91-291e43b3f9d7.png?operations=autocrop(277:388)"
+    },
+    {
+      "id": "p_3xs53jj",
+      "name": "Бруно Жордао",
+      "number": "6",
+      "position": "Полузащитник",
+      "nation": "Португалия",
+      "age": "27",
+      "photo": "https://sportal365images.com/process/smp-images-production/assets/25102025/6fbd43ac-fe2c-4f42-aa44-21015949d065.png?operations=autocrop(277:388)"
+    },
+    {
+      "id": "p_hom7mxk",
+      "name": "Улаус Скаршем",
+      "number": "7",
+      "position": "Полузащитник",
+      "nation": "Норвегия",
+      "age": "27",
+      "photo": "https://sportal365images.com/process/smp-images-production/assets/25102025/261c92f9-3876-462c-ba20-f905d996afa7.png?operations=autocrop(277:388)"
+    },
+    {
+      "id": "p_biuku1x",
+      "name": "Дейвид Сегер",
+      "number": "8",
+      "position": "Полузащитник",
+      "nation": "Швеция",
+      "age": "26",
+      "photo": "https://sportal365images.com/process/smp-images-production/assets/25102025/4a167e18-4a44-4102-a430-298d5b2e5007.png?operations=autocrop(277:388)"
+    },
+    {
+      "id": "p_u9g5puc",
+      "name": "Леандро Годой",
+      "number": "9",
+      "position": "Нападател",
+      "nation": "Аржентина",
+      "age": "24",
+      "photo": "https://sportal365images.com/process/smp-images-production/assets/25102025/df613697-fb4d-4390-b9db-590cf7fcdb67.png?operations=autocrop(277:388)"
+    },
+    {
+      "id": "p_rrm0qqy",
+      "name": "Мохамед Брахими",
+      "number": "11",
+      "position": "Полузащитник",
+      "nation": "Франция",
+      "age": "27",
+      "photo": "https://sportal365images.com/process/smp-images-production/assets/25102025/83ec0697-cc8c-4919-ab2d-d7d9ef576175.png?operations=autocrop(277:388)"
+    },
+    {
+      "id": "p_7jxw4g6",
+      "name": "Браян Кордоба",
+      "number": "13",
+      "position": "Защитник",
+      "nation": "Колумбия",
+      "age": "26",
+      "photo": "https://sportal365images.com/process/smp-images-production/assets/25102025/22fc08c5-b8db-4f65-a2e7-b616216611f3.png?operations=autocrop(277:388)"
+    },
+    {
+      "id": "p_i7ae9cq",
+      "name": "Теодор Иванов",
+      "number": "14",
+      "position": "Защитник",
+      "nation": "България",
+      "age": "21",
+      "photo": "https://sportal365images.com/process/smp-images-production/assets/25102025/84093cbb-a25b-4b9f-9a0e-38fc41a5dd99.png?operations=autocrop(277:388)"
+    },
+    {
+      "id": "p_jovw0mw",
+      "name": "Георги Чорбаджийски",
+      "number": "16",
+      "position": "Полузащитник",
+      "nation": "България",
+      "age": "21",
+      "photo": "https://sportal365images.com/process/smp-images-production/assets/25102025/f335017a-637e-4a4b-9a48-8cbdcbc04561.png?operations=autocrop(277:388)"
+    },
+    {
+      "id": "p_hvh3ceo",
+      "name": "Анжело Мартино",
+      "number": "17",
+      "position": "Защитник",
+      "nation": "Аржентина",
+      "age": "27",
+      "photo": "https://sportal365images.com/process/smp-images-production/assets/25102025/c8491628-9243-43cc-b9a4-894bea8b355c.png?operations=autocrop(277:388)"
+    },
+    {
+      "id": "p_d97cv9b",
+      "name": "Иван Турицов",
+      "number": "19",
+      "position": "Защитник",
+      "nation": "България",
+      "age": "26",
+      "photo": "https://sportal365images.com/process/smp-images-production/assets/25102025/b50b6d72-f996-4132-84a2-40fafeaf1f62.png?operations=autocrop(277:388)"
+    },
+    {
+      "id": "p_04df7uo",
+      "name": "Мартин Стойчев",
+      "number": "20",
+      "position": "Защитник",
+      "nation": "България",
+      "age": "22",
+      "photo": "https://sportal365images.com/process/smp-images-production/assets/25102025/d4023f19-32fc-401b-9954-83472890b8d8.png?operations=autocrop(277:388)"
+    },
+    {
+      "id": "p_nl30b30",
+      "name": "Фьодор Лапоухов",
+      "number": "21",
+      "position": "Вратар",
+      "nation": "Беларус",
+      "age": "22",
+      "photo": "https://sportal365images.com/process/smp-images-production/assets/25102025/95ee0888-c6a2-415b-abc4-164cffec5201.png?operations=autocrop(277:388)"
+    },
+    {
+      "id": "p_gep1ajf",
+      "name": "Кевин Додай",
+      "number": "22",
+      "position": "Нападател",
+      "nation": "Албания",
+      "age": "20",
+      "photo": "https://sportal365images.com/process/smp-images-production/assets/25102025/a571902a-4122-44b9-97c1-6fa244442ed7.png?operations=autocrop(277:388)"
+    },
+    {
+      "id": "p_303qreu",
+      "name": "Илиан Антонов",
+      "number": "23",
+      "position": "Нападател",
+      "nation": "България",
+      "age": "20",
+      "photo": "https://sportal365images.com/process/smp-images-production/assets/25102025/e10f51ba-0404-4224-a447-5ba9a789789e.png?operations=autocrop(277:388)"
+    },
+    {
+      "id": "p_ez5pbxc",
+      "name": "Юлиан Илиев",
+      "number": "24",
+      "position": "Полузащитник",
+      "nation": "България",
+      "age": "20",
+      "photo": "https://sportal365images.com/process/smp-images-production/assets/25102025/4323b242-2417-4748-9b85-8692ddb665f0.png?operations=autocrop(277:388)"
+    },
+    {
+      "id": "p_hqnmkep",
+      "name": "Йоанис Питас",
+      "number": "28",
+      "position": "Нападател",
+      "nation": "Кипър",
+      "age": "29",
+      "photo": "https://sportal365images.com/process/smp-images-production/assets/25102025/64539003-b4d8-4777-915a-112e45a6dadd.png?operations=autocrop(277:388)"
+    },
+    {
+      "id": "p_x73xmpr",
+      "name": "Иван Тасев",
+      "number": "29",
+      "position": "Нападател",
+      "nation": "България",
+      "age": "23",
+      "photo": "https://sportal365images.com/process/smp-images-production/assets/25102025/d4d8ca3f-2321-4e83-a53f-f7a5897936bc.png?operations=autocrop(277:388)"
+    },
+    {
+      "id": "p_6x8ia8j",
+      "name": "Петко Панайотов",
+      "number": "30",
+      "position": "Полузащитник",
+      "nation": "България",
+      "age": "20",
+      "photo": "https://sportal365images.com/process/smp-images-production/assets/25102025/5db09c9e-5e93-439d-88d1-d1159984a0d7.png?operations=autocrop(277:388)"
+    },
+    {
+      "id": "p_21d0wh2",
+      "name": "Илиан Илиев",
+      "number": "73",
+      "position": "Полузащитник",
+      "nation": "България",
+      "age": "26",
+      "photo": "https://sportal365images.com/process/smp-images-production/assets/25102025/b1fc2fc2-5406-4830-b04e-8b5dc7cdb2b0.png?operations=autocrop(277:388)"
+    },
+    {
+      "id": "p_ctcxc6z",
+      "name": "Йоан Борносузов",
+      "number": "91",
+      "position": "Нападател",
+      "nation": "България",
+      "age": "21",
+      "photo": "https://sportal365images.com/process/smp-images-production/assets/25102025/15e31f1b-87d1-4ff0-be03-1ad256fee264.png?operations=autocrop(277:388)"
+    },
+    {
+      "id": "p_x5yl0fy",
+      "name": "Джеймс Ето'о",
+      "number": "99",
+      "position": "Полузащитник",
+      "nation": "Камерун",
+      "age": "24",
+      "photo": "https://sportal365images.com/process/smp-images-production/assets/25102025/a182e231-b290-4389-9545-03f59dad77e9.png?operations=autocrop(277:388)"
+    },
+    {
+      "id": "pl_xjo5fza",
+      "name": "Даниел Николов",
+      "number": "25",
+      "position": "Вратар",
+      "club": "club_twzo7j6",
+      "photo": "https://sportal365images.com/process/smp-images-production/assets/28102025/826a9100-dbdb-46ce-b6d9-768d9762df3a.png?operations=autocrop(277:388)"
+    },
+    {
+      "id": "pl_hzmx84o",
+      "name": "Алехандро Пиедраита",
+      "nation": "Колумбия",
+      "age": "23",
+      "number": "77",
+      "position": "Нападател",
+      "club": "club_twzo7j6",
+      "photo": "https://sportal365images.com/process/smp-images-production/assets/16122025/617f6b82-469f-4ce4-9496-d8c71381a6e5.png?operations=autocrop(277:388)"
+    },
+    {
+      "id": "pl_hwzaku0",
+      "name": "Макс Ебонг",
+      "nation": "Беларус",
+      "age": "26",
+      "number": "10",
+      "position": "Полузащитник",
+      "club": "club_twzo7j6",
+      "photo": "https://img.a.transfermarkt.technology/portrait/big/533783-1748197807.png?lm=1"
+    }
+  ]
+}

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+<meta charset="UTF-8">
+<title>Вход</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+    /* ==================================================
+       Общи стилове за body
+    ================================================== */
+    body {
+        background: #111;
+        color: #fff;
+        font-family: Arial, sans-serif;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+    }
+
+    /* ==================================================
+       Контейнер за вход
+    ================================================== */
+    .box {
+        background: #222;
+        padding: 25px 35px;
+        border-radius: 10px;
+        box-shadow: 0 0 25px rgba(0,0,0,0.7);
+        text-align: center;
+        width: 300px;
+    }
+
+    /* ==================================================
+       Стилове за input полетата
+    ================================================== */
+    input {
+        width: 90%;
+        padding: 12px;
+        font-size: 16px;
+        border: none;
+        border-radius: 6px;
+        margin-top: 10px;
+        outline: none;
+    }
+
+    /* ==================================================
+       Основен бутон за вход
+    ================================================== */
+    button {
+        width: 100%;
+        padding: 12px;
+        margin-top: 15px;
+        font-size: 16px;
+        background: #780000;
+        border: none;
+        border-radius: 6px;
+        color: #fff;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    button:hover {
+        background: #fe0000;
+    }
+
+    /* ==================================================
+       Бутон за връщане към начална страница
+    ================================================== */
+    .home-btn {
+        background: #444;
+        margin-top: 10px;
+    }
+    .home-btn:hover {
+        background: #333;
+    }
+</style>
+
+</head>
+<body>
+
+<!-- ==================================================
+     Контейнер за вход
+================================================== -->
+<div class="box">
+    <h2>Вход</h2>
+
+    <!-- Поле за парола -->
+    <input type="password" id="pass" placeholder="Парола">
+
+    <!-- Бутон за вход в админ -->
+    <button onclick="login()">Вход в админ</button>
+
+    <!-- Бутон за начална страница -->
+    <button class="home-btn" onclick="goHome()">Начална страница</button>
+
+    <!-- Съобщение за грешна парола -->
+    <p id="msg" style="color: red; margin-top: 10px;"></p>
+</div>
+
+<!-- ==================================================
+     JavaScript за логика на вход
+================================================== -->
+<script>
+    // Позволява натискане на Enter за вход
+    document.getElementById("pass").addEventListener("keyup", function(e) {
+        if (e.key === "Enter") {
+            login();
+        }
+    });
+
+    // Функция за вход
+    function login() {
+        const password = document.getElementById("pass").value;
+
+        // ❗ Промени тук паролата за админ достъп
+        const correctPassword = "strelkov";
+
+        if (password === correctPassword) {
+            // Успешен вход → пренасочване към admin страницата
+            window.location.href = "admin/admin.html";
+        } else {
+            // Грешна парола → показва съобщение
+            document.getElementById("msg").textContent = "Грешна парола! - Паролата е лесна";
+        }
+    }
+
+    // Функция за връщане към начална страница
+    function goHome() {
+        window.location.href = "index.html"; // смени ако началната страница е различна
+    }
+</script>
+
+</body>
+</html>

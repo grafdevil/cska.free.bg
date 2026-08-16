@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <title>Вход / Регистрация</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body { background: #0f172a; color: #fff; font-family: 'Segoe UI', sans-serif; display: flex; align-items: center; justify-content: center; height: 100vh; margin: 0; }
+        .box { background: #1e293b; padding: 30px; border-radius: 12px; text-align: center; width: 350px; box-shadow: 0 10px 25px rgba(0,0,0,0.5); }
+        input { width: 100%; padding: 12px; margin-top: 10px; border-radius: 6px; border: 1px solid #334155; background: #0f172a; color: white; box-sizing: border-box; }
+        button { width: 100%; padding: 12px; margin-top: 15px; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; transition: 0.3s; }
+		.btn-gohome { background: #369727; color: white; }
+        .btn-login { background: #2563eb; color: white; }
+        .btn-reg { background: transparent; color: #94a3b8; border: 1px solid #475569; margin-top: 10px; }
+        button:hover { opacity: 0.8; }
+        #msg { color: #f87171; margin-top: 15px; font-size: 14px; min-height: 20px; }
+    </style>
+</head>
+<body>
+
+<div class="box">
+    <h2 id="title">Вход</h2>
+    <input type="email" id="email" placeholder="Имейл">
+    <input type="password" id="pass" placeholder="Парола">
+    
+    <button id="mainBtn" class="btn-login">Влез в системата</button>
+    <button id="toggleBtn" class="btn-reg">Нямате профил? Регистрирайте се</button>
+    <a href="../index.html"><button class="btn-gohome">Върни се в началната страница</button></a>
+    
+    <p id="msg"></p>
+</div>
+
+<script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-app.js";
+    import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-auth.js";
+    import { getDatabase, ref, get, set } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-database.js";
+
+    const firebaseConfig = {
+        apiKey: "AIzaSyB92YVJ517MyHYTOZA6RH7ydgckBYFuZMg",
+        authDomain: "studious-loader-483606-b9.firebaseapp.com",
+        databaseURL: "https://studious-loader-483606-b9-default-rtdb.europe-west1.firebasedatabase.app",
+        projectId: "studious-loader-483606-b9",
+        storageBucket: "studious-loader-483606-b9.firebasestorage.app",
+        messagingSenderId: "301695598830",
+        appId: "1:301695598830:web:f716b09ff815d0a3ab33ff"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+    const db = getDatabase(app);
+
+    let isLoginMode = true;
+
+    const emailInp = document.getElementById("email");
+    const passInp = document.getElementById("pass");
+    const mainBtn = document.getElementById("mainBtn");
+    const toggleBtn = document.getElementById("toggleBtn");
+    const msg = document.getElementById("msg");
+
+    // Превключване между Вход и Регистрация
+    toggleBtn.onclick = () => {
+        isLoginMode = !isLoginMode;
+        document.getElementById("title").innerText = isLoginMode ? "Вход" : "Регистрация";
+        mainBtn.innerText = isLoginMode ? "Влез в системата" : "Създай профил";
+        toggleBtn.innerText = isLoginMode ? "Нямате профил? Регистрирайте се" : "Вече имате профил? Влезте";
+        msg.innerText = "";
+    };
+// Добавяне на функционалност за натискане на Enter
+passInp.addEventListener("keypress", (event) => {
+    if (event.key === "Enter") {
+        event.preventDefault(); // Спира презареждането на страницата
+        mainBtn.click();        // Извиква автоматично натискане на главния бутон
+    }
+});
+
+// По желание: Enter да работи и докато си в полето за Имейл
+emailInp.addEventListener("keypress", (event) => {
+    if (event.key === "Enter") {
+        event.preventDefault();
+        mainBtn.click();
+    }
+});
+    mainBtn.onclick = async () => {
+        const email = emailInp.value;
+        const password = passInp.value;
+
+        if(!email || !password) return msg.innerText = "Моля, попълнете всички полета!";
+
+        try {
+            if (isLoginMode) {
+                // ВХОД
+                await signInWithEmailAndPassword(auth, email, password);
+                window.location.href = "admin.html";
+            } else {
+                // РЕГИСТРАЦИЯ
+                const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+                const user = userCredential.user;
+
+                // Проверка за първи потребител
+                const usersSnap = await get(ref(db, 'users'));
+                const role = usersSnap.exists() ? "registered" : "admin";
+
+                // Записваме потребителя в базата с роля
+                await set(ref(db, 'users/' + user.uid), {
+                    email: email,
+                    role: role,
+                    createdAt: new Date().toISOString()
+                });
+
+                alert(role === "admin" ? "Вие сте първият потребител и бяхте назначен за АДМИНИСТРАТОР!" : "Регистрацията е успешна!");
+                window.location.href = "admin.html";
+            }
+        } catch (error) {
+            msg.innerText = "Грешка: " + error.message;
+        }
+    };
+</script>
+</body>
+</html>

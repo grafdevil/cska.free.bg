@@ -1,0 +1,334 @@
+<!DOCTYPE HTML>
+<html lang="bg"> <!-- Декларира документа като HTML5 и езика като български -->
+<head>
+    <meta charset="utf-8" /> <!-- Задава кодиране UTF-8 за правилно показване на кирилица -->
+<!-- ================================================== -->
+<!-- ПРЕДВАРИТЕЛНИ ВРЪЗКИ ЗА БЪРЗО ЗАРЕЖДАНЕ -->
+<!-- ================================================== -->
+
+<!-- Firebase Database -->
+<link rel="preconnect" href="https://studious-loader-483606-b9-default-rtdb.europe-west1.firebasedatabase.app">
+<link rel="dns-prefetch" href="https://studious-loader-483606-b9-default-rtdb.europe-west1.firebasedatabase.app">
+
+<!-- Cloudinary за изображения -->
+<link rel="preconnect" href="https://imagedelivery.net">
+<link rel="dns-prefetch" href="https://imagedelivery.net">
+
+<!-- Cloudinary резервен -->
+<link rel="preconnect" href="https://res.cloudinary.com">
+<link rel="dns-prefetch" href="https://res.cloudinary.com">
+
+<!-- Google Fonts (ако се използват) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="dns-prefetch" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>	
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" /> 
+    <!-- Важно за мобилни устройства: екранът се мащабира правилно и забранява ръчното зуумване -->
+    <title>ЦСКА FreeBG</title> <!-- Заглавието, което се показва в таба на браузъра -->
+
+
+
+    <!-- Favicon -->
+    <link rel="icon" href="https://imagedelivery.net/nGq9Hp3hctU0gRPfsXunBA/9b034aec-e85f-4641-f6a8-75aa6586f500/mainMediumImage"  loading="lazy" type="image/x-icon">
+    <!-- Иконата на сайта, която стои до заглавието в таба -->
+
+	<!-- Свързване на всички CSS файлове -->
+	<link rel="stylesheet" href="css/root.css">             <!-- Глобални CSS променливи (:root) -->
+	<link rel="stylesheet" href="css/loader.css">           <!-- Стил на екрана за зареждане -->
+	<link rel="stylesheet" href="css/background.css">       <!-- Стил на огромния заден фон с резултати -->
+	<link rel="stylesheet" href="css/music-player.css">     <!-- Стил на аудио плеъра -->
+	<link rel="stylesheet" href="css/logo.css">             <!-- Стил на централното лого -->
+	<link rel="stylesheet" href="css/menu.css">             <!-- Стил на popup менюто -->
+	<link rel="stylesheet" href="css/next-match.css">       <!-- Стил на секцията за следващ мач -->
+	<link rel="stylesheet" href="css/next-matches.css">     <!-- Стил на секцията за следващите мачове -->	
+	<link rel="stylesheet" href="css/news.css">             <!-- Стил на новинарските кубове -->
+	<link rel="stylesheet" href="css/players.css">          <!-- Стил на секцията с играчи -->
+	<link rel="stylesheet" href="css/video-archive.css">     <!-- Стил на видео архива -->
+	<link rel="stylesheet" href="css/archive.css">          <!-- Стил на архивираните сезони (акордеон) -->
+	<link rel="stylesheet" href="css/footer.css">           <!-- Стил на долната част на сайта -->
+	<link rel="stylesheet" href="css/media-fix.css">        <!-- Специфични корекции за хоризонтални телефони -->
+	<!-- <link rel="stylesheet" href="history/history.css">      Стил на страницата "История" -->
+	<link rel="stylesheet" href="seasons/seasons.css">      <!-- Стил на страницата "За архивирани сезони" -->
+	<link rel="stylesheet" href="css/auth.css">
+	<link rel="stylesheet" href="css/mobile-fix.css">
+    
+    <!-- Допълнителни стилове (вероятно от шаблон) -->
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+</head>
+<body>
+
+<!-- ================================================== -->
+<!-- LOADER -->
+<!-- Показва се докато страницата и данните се зареждат -->
+<!-- ================================================== -->
+<!-- ИНДИКАТОР ЗА ЗАРЕЖДАНЕ НА СТРАНИЦАТА -->
+<!-- ================================================== -->
+<div id="page-loader" style="position:fixed; top:0; left:0; width:100%; height:100%; background:#0a0a0a; z-index:999999; display:flex; align-items:center; justify-content:center; flex-direction:column; gap:20px; transition:opacity 0.6s ease;">
+    <img src="https://imagedelivery.net/nGq9Hp3hctU0gRPfsXunBA/9b034aec-e85f-4641-f6a8-75aa6586f500/mainMediumImage?w=100&h=100&fit=cover&auto=format" alt="CSKA" style="width:80px; height:80px; animation:pulse 1.4s infinite;">
+    
+    <div style="width:200px; height:4px; background:rgba(255,255,255,0.1); border-radius:4px; overflow:hidden;">
+        <div id="page-loader-bar" style="width:0%; height:100%; background:linear-gradient(90deg, #d11111, #ff4444); transition:width 0.3s ease;"></div>
+    </div>
+    
+    <div id="page-loader-text" style="color:rgba(255,255,255,0.5); font-size:12px; letter-spacing:2px; text-transform:uppercase; font-family:sans-serif;">Зареждане...</div>
+</div>
+
+<style>
+@keyframes pulse {
+    0% { transform: scale(1); opacity:0.65; }
+    12% { transform: scale(1.03); opacity:0.75; }
+    25% { transform: scale(1.06); opacity:0.85; }
+    38% { transform: scale(1.09); opacity:0.95; }
+    50% { transform: scale(1.11); opacity:1; }
+    62% { transform: scale(1.09); opacity:0.95; }
+    75% { transform: scale(1.06); opacity:0.85; }
+    88% { transform: scale(1.03); opacity:0.75; }
+    100% { transform: scale(1); opacity:0.65; }
+}
+</style>
+<!-- END LOADER -->
+
+<!-- ================================================== -->
+<!-- BACKGROUND / Ротация на логата и резултата на мача -->
+<div id="match-background"> <!-- Фиксиран фон, който стои най-отзад -->
+    <div id="logos-wrapper">
+        <img id="home-logo" class="team-logo" src=""> <!-- Лого на домакина (празно src се пълни от JS) -->
+        <div id="match-result"></div> <!-- Резултатът (празен се пълни от JS) -->
+        <img id="away-logo" class="team-logo" src=""> <!-- Лого на госта -->
+    </div>
+</div>
+<!-- END BACKGROUND -->
+
+<!-- ================================================== -->
+<!-- MUSIC PLAYER / Аудио плеър със смяна на песни -->
+<div id="music-player"> <!-- Фиксиран елемент в горната част на екрана -->
+    <button id="prevBtn">⏮</button> <!-- Бутон предишна песен -->
+    <button id="playPauseBtn">▶</button> <!-- Бутон play/pause -->
+    <button id="nextBtn">⏭</button> <!-- Бутон следваща песен -->
+    <span id="track-title">Зарежда...</span> <!-- Заглавие на текущата песен -->
+    <audio id="audio" preload="metadata"></audio>
+ <!-- HTML5 аудио елемент, скрит от потребителя -->
+
+    <!-- Централно лого (Back to top при клик) -->
+    <div id="center-logo">
+        <img src="https://res.cloudinary.com/xgtgerwb/image/upload/v1786794603/2608297_fragm4.png"  loading="lazy" alt="Logo" loading="eager">
+    </div>
+
+    <!-- Меню (създава се динамично от JS) -->
+	<button id="menu-toggle" aria-label="Menu">☰</button> <!-- Мобилен бутон "бургер" -->
+    <div id="popup-menu-container" style="display:flex; gap:15px;"></div> <!-- Контейнер за бутоните -->
+
+</div>
+<!-- END MUSIC PLAYER -->
+
+<!-- ================================================== -->
+
+
+<!-- ================================================== -->
+<!-- WRAPPER (Основна обвивка на видимото съдържание) -->
+<div id="wrapper">
+
+    <!-- HEADER -->
+    <header id="header">
+        <div class="content">
+            <div class="inner">
+
+                <!-- NEXT MATCH / Предстоящ мач (Трите куба с логата) -->
+                <n-match>
+                    <li id="next-match"></li> <!-- JS ще добави 3 <li> елемента тук -->
+                </n-match>
+                <!-- END NEXT MATCH -->
+
+                <!-- NEWS / Новини за ЦСКА -->
+                <section id="cska-news">
+                    <div id="news-container">Зареждане на новини, моля изчакайте...</div>
+                    <!-- JS ще замени този текст с кубовете с новините -->
+                </section>
+                <!-- END NEWS -->
+
+                <!-- PLAYERS / Списък с играчи, снимки, позиции и други -->
+                <div id="player-wrapper">
+                    <div class="player-layout">
+
+                        <!-- Player Card (Ляв голям куб с инфо за играча) -->
+                        <div class="player-card" id="playerCard">
+                            <div class="player-info">
+                                <!-- Полета, които JS пълни с инфо за играча -->
+                                <div class="player-number" id="playerNumber">№...</div>
+                                <div class="player-name" id="playerName">Име...</div>
+                                <div class="player-meta" id="playerPos"></div>
+                                <div class="player-meta" id="playerNation"></div>
+                                <div class="player-meta" id="playerAge"></div>
+								<button class="player-arrow left" id="playerPrev" aria-label="Предишен играч">❮</button>
+								<button class="player-arrow right" id="playerNext" aria-label="Следващ играч">❯</button>
+
+                            </div>
+
+                            <div class="player-photo">
+                                <!-- Двата слоя за плавна анимация на снимките -->
+                                <div class="bg-gamer" id="bg-gamer-1"></div>
+                                <div class="bg-gamer" id="bg-gamer-2"></div>
+                            </div>
+                        </div>
+                        <!-- END Player Card -->
+
+                        <!-- NEXT MATCH PANEL -->
+                        <div class="matches-card" id="nextMatchPanel">
+
+                            <button id="prevMatchBtn" class="match-arrow left-arrow">
+                                ❮
+                            </button>
+
+                            <div class="match-teams">
+                                <img id="homeLogo">
+                                <span>vs</span>
+                                <img id="awayLogo">
+                            </div>
+
+                            <div class="match-names" id="matchNames"></div>
+                            <div class="match-date" id="matchDate"></div>
+                            <div class="match-info" id="matchInfo"></div>
+
+                            <button id="nextMatchBtn" class="match-arrow right-arrow">
+                                ❯
+                            </button>
+
+                        </div>
+                        <!-- END NEXT MATCH PANEL -->
+
+                    </div>
+                </div>
+                <!-- END PLAYERS -->
+
+                <!-- PAST MATCHES / Видео архив -->
+                <div id="past-matches"></div> <!-- JS ще генерира кубовете тук -->
+                <!-- END PAST MATCHES -->
+
+                <!-- ARCHIVED SEASONS / Архивиран сезон (Забележка: Закоментирано е) -->
+                <!-- <h2>Архивиран сезон</h2>-->
+                <div id="archived-wrapper"></div><hr> 
+                <!-- END ARCHIVED SEASONS -->
+
+            </div>
+        </div>
+    </header>
+    <!-- END HEADER -->
+
+    <!-- MAIN -->
+    <div id="main"></div> <!-- Вероятно за допълнително съдържание -->
+    <!-- END MAIN -->
+
+    <!-- FOOTER -->
+<footer id="footer">
+    <div class="footer-grid">
+        <div class="footer-section">
+            <b>&copy;Untitled. Design</b>
+            <a href="https://penko.free.bg" target="_blank">&reg;PENKO STRELKOV</a>
+        </div>
+        <div class="footer-section">
+            <b>Използвани данни</b>
+            <a href="https://cska.bg" target="_blank">cska.bg</a>
+        </div>
+        <div class="footer-section">
+            <b>Безплатен хостинг</b>
+            <a href="https://free.bg/rules.html" target="_blank">free.bg</a>
+        </div>
+    </div>
+</footer>
+
+    <!-- END FOOTER -->
+
+</div>
+<!-- END WRAPPER -->
+<!-- ================================================== -->
+<!-- AUTH SCREEN -->
+<div id="auth-screen" class="auth-overlay" style="display:none;">
+    <div class="auth-card">
+        <button class="auth-close-btn" id="auth-close-btn" type="button" aria-label="Затвори">✕</button>
+
+        <div class="auth-header">
+            <h2 id="auth-title">Вход в системата</h2>
+            <p id="auth-subtitle">Моля, въведете своите данни</p>
+        </div>
+        
+        <div class="auth-form">
+            <div class="input-group" id="name-group" style="display: none;">
+                <label>👤 Име и Фамилия</label>
+                <input type="text" id="auth-name" placeholder="Иван Иванов">
+            </div>
+
+            <div class="input-group" id="phone-group" style="display: none;">
+                <label>📱 Телефон</label>
+                <input type="tel" id="auth-phone" placeholder="0888123456">
+            </div>
+
+            <div class="input-group">
+                <label>📧 Имейл</label>
+                <input type="email" id="auth-email" placeholder="example@mail.com">
+            </div>
+            
+            <div class="input-group">
+                <label>🔒 Парола</label>
+                <input type="password" id="auth-pass" placeholder="******">
+                <span id="toggle-password">👁️</span>
+            </div>
+
+            <button id="auth-action-btn" class="auth-btn">Влез</button>
+        </div>
+
+        <div class="auth-footer">
+            <p id="auth-switch-text">Нямате профил? <a href="javascript:void(0)" id="auth-switch-link">Регистрирайте се</a></p>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- ================================================== -->
+<!-- PROFILE POPUP -->
+<div id="profile-popup" class="auth-overlay" style="display:none;">
+    <div class="auth-card">
+        <!-- Х БУТОН В ГОРНИЯ ДЕСЕН ЪГЪЛ -->
+        <button class="auth-close-btn" id="profile-close-btn" type="button" aria-label="Затвори">✕</button>
+
+        <div class="auth-header">
+            <h2>👤 Моят Профил</h2>
+            <p>Добре дошли в армейското семейство</p>
+        </div>
+        <div id="profile-details" style="text-align: left; margin: 20px 0; line-height: 1.6;"></div>
+        <!-- ПРЕМАХНАХ СТАРИЯ БУТОН "Затвори" ОТДОЛУ -->
+    </div>
+</div>
+
+
+<!-- BACKGROUND ELEMENT / за декоративен фон -->
+<div id="bg"></div>
+<!-- ================================================== -->
+<!-- SCRIPTS - ОПТИМИЗИРАНА ВЕРСИЯ -->
+<!-- ================================================== -->
+
+<!-- 1. Firebase - задължително първи -->
+<script src="assets/js(Firebase)/firebase-app-compat.js" defer></script>
+<script src="assets/js(Firebase)/firebase-database-compat.js" defer></script>
+<script src="assets/js(Firebase)/firebase-init.js" defer></script>
+<script type="module" src="assets/js(Firebase)/auth.js" defer></script>
+
+<!-- 2. ⭐ ЦЕНТРАЛЕН ЗАРЕЖДАЩ НА ДАННИ (НОВ) ⭐ -->
+<script src="assets/js(Firebase)/data-loader.js" defer></script>
+
+<!-- 3. Модули, които чакат firebaseDataReady -->
+<script src="assets/js/main.js" defer></script>
+<!-- <script src="assets/js/loader.js" defer></script> -->
+<script src="assets/js(Firebase)/background(Firebase).js" defer></script>
+<script src="assets/js(Firebase)/next-match.js" defer></script>
+<script src="assets/js(Firebase)/players(Firebase).js" defer></script>
+<script src="assets/js(Firebase)/next-matches(Firebase).js" defer></script>
+<script src="assets/js/news.js" defer></script>
+<script src="assets/js(Firebase)/video-archive(Firebase).js" defer></script>
+<script type="module" src="assets/js/player.js" defer></script>
+<script src="seasons/seasons.js" defer></script>
+<!-- END SCRIPTS -->
+
+</body>
+</html>

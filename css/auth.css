@@ -1,0 +1,340 @@
+/* ============================================================
+   AUTH.CSS - ПЪЛНА ВЕРСИЯ С Х БУТОН
+   ============================================================ */
+
+/* ----------------------------------------------
+   ОСНОВЕН КОНТЕЙНЕР
+   ---------------------------------------------- */
+#auth-screen {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    z-index: 999999;
+    align-items: center;
+    justify-content: center;
+}
+
+#auth-screen.active {
+    display: flex;
+}
+
+/* ----------------------------------------------
+   КАРТА НА МОДАЛА
+   ---------------------------------------------- */
+.auth-card {
+    background: linear-gradient(145deg, rgba(18, 18, 18, 0.98), rgba(28, 28, 28, 0.95));
+    border: 1px solid rgba(209, 17, 17, 0.4);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.8), 0 0 20px rgba(209, 17, 17, 0.15);
+    padding: 2.5rem 2.5rem 2rem 2.5rem;
+    border-radius: 16px;
+    backdrop-filter: blur(12px);
+    width: 100%;
+    max-width: 400px;
+    box-sizing: border-box;
+    color: white;
+    position: relative;
+    margin: 20px;
+}
+
+/* ----------------------------------------------
+   Х БУТОН ЗА ЗАТВАРЯНЕ (ОБЩ)
+   ---------------------------------------------- */
+.auth-close-btn {
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid #555;
+    color: #aaa;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    font-size: 1.4rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    padding: 0;
+    z-index: 10;
+}
+
+.auth-close-btn:hover {
+    background: #d11111;
+    border-color: #d11111;
+    color: white;
+    transform: rotate(90deg);
+}
+
+/* ----------------------------------------------
+   ЗАГЛАВИЕ
+   ---------------------------------------------- */
+.auth-header {
+    text-align: center;
+    margin-bottom: 1.8rem;
+    padding-right: 20px;
+}
+
+.auth-header h2 {
+    margin: 0 0 5px 0;
+    font-size: 1.8rem;
+    color: #fff;
+    letter-spacing: 0.5px;
+}
+
+.auth-header p {
+    margin: 0;
+    color: #aaa;
+    font-size: 0.9rem;
+}
+
+/* ----------------------------------------------
+   ИНПУТ ПОЛЕТА
+   ---------------------------------------------- */
+.input-group {
+    margin-bottom: 1.2rem;
+    text-align: left;
+    position: relative;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 0.85rem;
+    color: #ccc;
+    font-weight: 500;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px 15px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid #444;
+    border-radius: 8px;
+    font-size: 1rem;
+    color: #fff;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+.input-group input:focus {
+    border-color: #d11111;
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 0 10px rgba(209, 17, 17, 0.2);
+    outline: none;
+}
+
+.input-group input::placeholder {
+    color: #666;
+}
+
+/* ----------------------------------------------
+   БУТОН ЗА ПОКАЗВАНЕ НА ПАРОЛА
+   ---------------------------------------------- */
+#toggle-password {
+    position: absolute;
+    right: 12px;
+    top: 38px;
+    cursor: pointer;
+    color: #888;
+    user-select: none;
+    font-size: 1.1rem;
+    transition: color 0.2s;
+}
+
+#toggle-password:hover {
+    color: #d11111;
+}
+
+/* ----------------------------------------------
+   ОСНОВЕН БУТОН
+   ---------------------------------------------- */
+.auth-btn {
+    background: #d11111;
+    color: white;
+    border: none;
+    padding: 14px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    margin-top: 8px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.auth-btn:hover {
+    background: #b50f0f;
+    box-shadow: 0 5px 20px rgba(209, 17, 17, 0.4);
+    transform: translateY(-2px);
+}
+
+.auth-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none !important;
+}
+
+/* ----------------------------------------------
+   ДОЛЕН КОЛОНТИТУЛ
+   ---------------------------------------------- */
+.auth-footer {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.auth-footer a {
+    color: #d11111;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.auth-footer a:hover {
+    text-decoration: underline;
+}
+
+/* ----------------------------------------------
+   OVERLAY
+   ---------------------------------------------- */
+.auth-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 999999 !important;
+    align-items: center;
+    justify-content: center;
+}
+
+.auth-overlay.active {
+    display: flex;
+}
+
+/* ----------------------------------------------
+   ПРОФИЛ ДЕТАЙЛИ
+   ---------------------------------------------- */
+#profile-details {
+    max-height: 60vh;
+    overflow-y: auto;
+    text-align: left;
+    margin: 20px 0;
+    line-height: 1.8;
+    padding-right: 5px;
+}
+
+#profile-details::-webkit-scrollbar {
+    width: 5px;
+}
+
+#profile-details::-webkit-scrollbar-track {
+    background: #222;
+    border-radius: 3px;
+}
+
+#profile-details::-webkit-scrollbar-thumb {
+    background: #d11111;
+    border-radius: 3px;
+}
+
+/* ----------------------------------------------
+   РЕДАКЦИОННА ФОРМА
+   ---------------------------------------------- */
+.edit-profile-form h3 {
+    margin-top: 0;
+    color: #d11111;
+    font-size: 1.1rem;
+}
+
+.auth-input {
+    width: 100%;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid #444;
+    border-radius: 8px;
+    color: white;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+}
+
+.auth-input:focus {
+    outline: none;
+    border-color: #d11111;
+}
+
+.profile-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* ----------------------------------------------
+   МОБИЛНИ УСТРОЙСТВА
+   ---------------------------------------------- */
+@media (max-width: 768px) {
+    .auth-card {
+        padding: 1.8rem 1.2rem 1.5rem 1.2rem;
+        margin: 15px;
+        max-width: 95%;
+        border-radius: 12px;
+    }
+
+    .auth-header {
+        padding-right: 10px;
+    }
+
+    .auth-header h2 {
+        font-size: 1.4rem;
+    }
+
+    .auth-header p {
+        font-size: 0.8rem;
+    }
+
+    .input-group input {
+        padding: 10px 12px;
+        font-size: 0.95rem;
+    }
+
+    .auth-close-btn {
+        width: 32px;
+        height: 32px;
+        font-size: 1.2rem;
+        top: 10px;
+        right: 12px;
+    }
+}
+
+@media (max-width: 400px) {
+    .auth-card {
+        padding: 1.2rem 0.8rem 1rem 0.8rem;
+        margin: 10px;
+    }
+
+    .auth-header h2 {
+        font-size: 1.2rem;
+    }
+
+    .auth-btn {
+        padding: 12px;
+        font-size: 0.9rem;
+    }
+
+    .auth-close-btn {
+        width: 28px;
+        height: 28px;
+        font-size: 1rem;
+        top: 8px;
+        right: 8px;
+    }
+}

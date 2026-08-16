@@ -1,0 +1,83 @@
+
+.matches-card{
+	position:relative;
+    touch-action: pan-y;
+    user-select: none;
+    cursor: grab;
+}
+
+.matches-card:active{
+    cursor: grabbing;
+}
+
+.match-arrow{
+  position: absolute;              /* Позиционира стрелките върху картата */
+  top: 50%;                        /* Поставя ги на 50% от горния ръб */
+  transform: translateY(-50%);     /* Центрира ги точно по средата на височината */
+  font-size: 56px;                 /* Голям размер за лесно натискане */
+  font-weight: 300;                /* Тънък, елегантен шрифт */
+  color: rgba(255, 255, 255, 0.85); /* Полупрозрачно бяло */
+  cursor: pointer;                 /* Курсор "ръчичка" за интерактивност */
+  user-select: none;               /* Забранява маркирането на стрелката като текст */
+  z-index: 4;                      /* Най-високият слой (над всичко останало) */
+
+  padding: 10px 14px;              /* Зона за кликане около стрелката */
+  border-radius: 12px;             /* Заобляне на фона на стрелката */
+
+  background: rgba(0,0,0,0.25);    /* Тъмен полупрозрачен фон за стрелката */
+  backdrop-filter: blur(6px);      /* Малко замагляване под самата стрелка */
+  -webkit-backdrop-filter: blur(6px);
+
+  transition:                      /* Анимира плавно три свойства */
+    opacity .25s ease,
+    transform .2s ease,
+    background .25s ease;
+}
+
+.match-arrow:hover{
+    transform:translateY(-50%) scale(1.1);
+}
+
+.left-arrow{
+    left:8px;
+}
+
+.right-arrow{
+    right:8px;
+}
+
+/* --------------------------------------- */
+
+/* ===== ОПРАВЯНЕ НА СТРЕЛКИТЕ ЗА НАВИГАЦИЯ ===== */
+#prevMatchBtn.match-arrow,
+#nextMatchBtn.match-arrow {
+    min-width: 64px !important;
+    max-width: 64px !important;
+
+
+}
+
+
+
+
+
+
+
+
+
+/* Съдържанието на мача да е центрирано */
+.match-teams {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 15px !important;
+}
+
+
+
+
+
+
+
+
+
